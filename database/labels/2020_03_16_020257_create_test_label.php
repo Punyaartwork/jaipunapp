@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use Vinelab\NeoEloquent\Schema\Blueprint;
+use Vinelab\NeoEloquent\Migrations\Migration;
 
 class DummyClass extends Migration
 {
@@ -13,7 +13,10 @@ class DummyClass extends Migration
      */
     public function up()
     {
-        //
+        Neo4jSchema::label('Test', function(Blueprint $label)
+        {
+            $label->unique('uuid');
+        });
     }
 
     /**
@@ -23,6 +26,7 @@ class DummyClass extends Migration
      */
     public function down()
     {
-        //
+        Neo4jSchema::drop('Test');
+        Neo4jSchema::dropIfExists('Test');
     }
 }
