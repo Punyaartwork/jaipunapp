@@ -2,6 +2,8 @@
 
 namespace Vinelab\Cms;
 
+use Illuminate\Database\Eloquent\Model;
+use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 
 class Test extends NeoEloquent
 {
