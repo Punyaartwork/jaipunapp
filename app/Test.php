@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Cms;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
