@@ -1,4 +1,4 @@
-<?php
+<?php/*
 
 namespace App;
 
@@ -7,6 +7,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 
 class Test extends NeoEloquent
 {
-    protected $label = 'Test'; // or array('User', 'Fan')
+    protected $label = 'Test'; 
     protected $fillable = ['name', 'email'];
 }
+*/
