@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Vinelab\NeoEloquent\Schema\Blueprint;
 use Vinelab\NeoEloquent\Migrations\Migration;
 
-class DummyClass extends Migration
+class CreateTestLabel extends Migration
 {
     /**
      * Run the migrations.
