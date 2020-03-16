@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{name}', function ($name)  {
+    $user = App\Test::create(['name' => $name, 'email' => 'some@email.com']);
     return view('welcome');
 });
