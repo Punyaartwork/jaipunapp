@@ -2,28 +2,11 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 
-class User extends Authenticatable
+class User extends NeoEloquent
 {
-    use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $label = 'User'; 
+    protected $fillable = ['name','account','detail','profile', 'sex','api_token','fire_token'];
 }
