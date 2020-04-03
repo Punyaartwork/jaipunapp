@@ -100,8 +100,9 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $post = new Post($request->all());
     $join = Join::find($joinid);
     $user->posts()->save($post);
-    $relation = $post->join()->associate($join);
-    $relation->save();
+    $post->join()->save($join);
+    //$relation = $post->join()->associate($join);
+    //$relation->save();
     return  $user->posts;
 });
 
