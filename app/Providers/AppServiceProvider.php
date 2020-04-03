@@ -13,9 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (app()->environment('remote')) {
-            URL::forceScheme('https');
-        }
+        URL::forceScheme('https');
+        $this->app['request']->server->set('HTTPS', true);
+        $this->app['request']->server->set('HTTPS', $this->app->environment() != 'local');
     }
 
     /**
