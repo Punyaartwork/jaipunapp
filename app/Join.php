@@ -13,8 +13,8 @@ class Join extends NeoEloquent
     {
         return $this->belongsTo('App\User');
     }
-    public function post()
+    public function posts()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsToMany('App\Post');
     }
 }

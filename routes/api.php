@@ -95,7 +95,7 @@ Route::get('posts/{id}', function($id) {
 
 Route::post('posts/{id}/{join}', function(Request $request, $id, $join) {
     $user = User::find($id);
-    $join = Join::find($id);
+    $join = Join::find($join);
     $post = new Post($request->all());
     $user->post()->save($post);
     $post->join()->save($join);
