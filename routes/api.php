@@ -36,7 +36,7 @@ Route::get('users/{id}', function($id) {
 });
 
 Route::post('users', function(Request $request) {
-    return new User($request->all());
+    return User::create($request->all());
 });
 
 Route::put('users/{id}', function(Request $request, $id) {
