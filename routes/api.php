@@ -34,15 +34,12 @@ Route::get('users/{id}', function($id) {
 });
 
 Route::post('users', function(Request $request) {
-    //$user = User::create($request->all());
-    //return Card::create($request->all);
     return   $user = User::create($request->all());
 });
 
 Route::put('users/{id}', function(Request $request, $id) {
     $user = User::findOrFail($id);
     $user->update($request->all());
-
     return $user;
 });
 
@@ -56,8 +53,30 @@ Route::delete('users/{id}', function($id) {
 | POST API Routes Join
 |--------------------------------------------------------------------------
 */
-Route::post('joins', function(Request $request) {
-    return   $request->all();
+Route::get('joins', function() {
+    return Join::all();
+});
+ 
+Route::get('joins/{id}', function($id) {
+    return Join::find($id);
+});
+
+Route::post('joins/{id}', function(Request $request, $id) {
+    $user = User::find($id);
+    $join = new Join($request->all());
+    $relation = $user->join()->save($join);
+    return  $relation;
+});
+
+/*Route::put('joins/{id}', function(Request $request, $id) {
+    $join = Join::findOrFail($id);
+    $join->update($request->all());
+    return $join;
+});*/
+
+Route::delete('joins/{id}', function($id) {
+    Join::find($id)->delete();
+    return 204;
 });
 /*
 |--------------------------------------------------------------------------
