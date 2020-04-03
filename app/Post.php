@@ -15,6 +15,6 @@ class Post extends NeoEloquent
     }
     public function author()
     {
-        return $this->belongsTo('User', 'POSTED');
+        return $this->belongsTo('App\User', 'POSTED');
     }
 }

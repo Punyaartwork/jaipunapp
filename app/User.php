@@ -15,6 +15,6 @@ class User extends NeoEloquent
     }
     public function posts()
     {
-        return $this->hasMany('Post', 'POSTED');
+        return $this->hasMany('App\Post', 'POSTED');
     }
 }
