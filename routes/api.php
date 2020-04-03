@@ -86,13 +86,12 @@ Route::delete('joins/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::get('posts', function() {
-    return Post::paginate(10)->join();
+    return Post::with('join')->paginate(10);
 });
  
 Route::get('posts/{id}', function($id) {
-    $post = Post::find($id);
+    $post = Post::with('user')->find($id);
     //$user = $post->right();
-    $post->user()->edge($post->user);
     return $post;
 });
 
