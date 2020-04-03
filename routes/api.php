@@ -102,7 +102,7 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $post->user()->save($user);
     $relation = $post->join()->associate($join);
     $relation->save();
-    return  $user->post;
+    return  $post;
 });
 
 Route::post('editposts/{id}', function(Request $request, $id) {
