@@ -11,6 +11,6 @@ class User extends NeoEloquent
     protected $fillable = ['name','account','detail','profile', 'sex','api_token','fire_token'];
     public function join()
     {
-        return $this->hasOne('Join');
+        return $this->hasOne('App\Join');
     }
 }
