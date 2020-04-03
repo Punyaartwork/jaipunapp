@@ -66,8 +66,8 @@ Route::get('joins/{id}', function($id) {
 Route::post('joins/{id}', function(Request $request, $id) {
     $user = User::find($id);
     $join = new Join($request->all());
-    $relation = $user->join()->save($join);
-    return  $relation;
+    $user->join()->save($join);
+    return  $user->join;
 });
 
 /*Route::put('joins/{id}', function(Request $request, $id) {

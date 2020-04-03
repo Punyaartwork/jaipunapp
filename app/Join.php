@@ -11,6 +11,6 @@ class Join extends NeoEloquent
     protected $fillable = ['join','joinPhoto','joinItem','joinLocation','joinLatitude', 'joinLongitude','joinDistance','joinTime'];
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
     }
 }
