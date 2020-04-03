@@ -13,8 +13,8 @@ class Post extends NeoEloquent
     {
         return $this->belongsTo('App\Join');
     }
-    public function user()
+    public function author()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('User', 'POSTED');
     }
 }
