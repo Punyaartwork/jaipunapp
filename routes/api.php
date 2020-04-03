@@ -56,7 +56,7 @@ Route::delete('users/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::post('joins', function(Request $request) {
-    return  $request->post();
+    return   $request->all();
 });
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ Route::post('joins', function(Request $request) {
 |--------------------------------------------------------------------------
 */
 Route::post('posts', function(Request $request) {
-    return  $request->post();
+    return   $request->all();
 });
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +72,7 @@ Route::post('posts', function(Request $request) {
 |--------------------------------------------------------------------------
 */
 Route::post('comments', function(Request $request) {
-    return  $request->post();
+    return   $request->all();
 });
 
 
