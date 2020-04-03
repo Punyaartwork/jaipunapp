@@ -13,4 +13,8 @@ class User extends NeoEloquent
     {
         return $this->hasOne('App\Join');
     }
+    public function post()
+    {
+        return $this->hasOne('App\Post');
+    }
 }

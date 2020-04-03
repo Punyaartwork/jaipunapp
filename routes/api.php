@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Join;
-use App\Post;
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
+use App\User;
+use App\Join;
+use App\Post;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -85,8 +85,32 @@ Route::delete('joins/{id}', function($id) {
 | POST API Routes Post
 |--------------------------------------------------------------------------
 */
-Route::post('posts', function(Request $request) {
-    return   $request->all();
+Route::get('posts', function() {
+    return Post::all();
+});
+ 
+Route::get('posts/{id}', function($id) {
+    return Post::find($id);
+});
+
+Route::post('posts/{id}/{join}', function(Request $request, $id, $join) {
+    $user = User::find($id);
+    $join = Join::find($id);
+    $post = new Post($request->all());
+    $user->post()->save($post);
+    $post->join()->save($join);
+    return  $user->post;
+});
+
+Route::post('editposts/{id}', function(Request $request, $id) {
+    $post = Post::findOrFail($id);
+    $post->update($request->all());
+    return $post;
+});
+
+Route::delete('posts/{id}', function($id) {
+    Post::find($id)->delete();
+    return 204;
 });
 /*
 |--------------------------------------------------------------------------
