@@ -36,7 +36,7 @@ Route::get('users/{id}', function($id) {
 });
 
 Route::post('users', function(Request $request) {
-    return   $user = User::create($request->all());
+    return new User($request->all());
 });
 
 Route::put('users/{id}', function(Request $request, $id) {
@@ -95,10 +95,9 @@ Route::get('posts/{id}', function($id) {
 
 Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user = User::find($id);
-    $join = Join::find($joinid);
     $post = new Post($request->all());
     $user->post()->save($post);
-    $post->join()->save($join);
+    $post->join()->attach($joinid);
     return  $user->post;
 });
 
