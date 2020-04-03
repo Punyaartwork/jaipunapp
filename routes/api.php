@@ -90,7 +90,7 @@ Route::get('posts', function() {
 });
  
 Route::get('posts/{id}', function($id) {
-    return Post::find($id)->user;
+    return Post::find($id)->join;
 });
 
 Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
