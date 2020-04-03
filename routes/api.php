@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Join;
+use App\Post;
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
