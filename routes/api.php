@@ -66,8 +66,8 @@ Route::get('joins/{id}', function($id) {
 Route::post('joins/{id}', function(Request $request, $id) {
     $user = User::find($id);
     $join = new Join($request->all());
-    $user->create()->save($join);
-    return  $user->create;
+    $user->joins()->save($join);
+    return  $user->joins;
 });
 
 Route::post('editjoins/{id}', function(Request $request, $id) {
@@ -86,11 +86,11 @@ Route::delete('joins/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::get('posts', function() {
-    return Post::with('join')->with('author')->paginate(10);
+    return Post::with('join')->with('user')->paginate(10);
 });
  
 Route::get('posts/{id}', function($id) {
-    $post = Post::with('author')->with('join')->find($id);
+    $post = Post::with('user')->with('join')->find($id);
     //$user = $post->right();
     return $post;
 });
