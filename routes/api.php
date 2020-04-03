@@ -96,14 +96,13 @@ Route::get('posts/{id}', function($id) {
 });
 
 Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
-    $post = new Post($request->all());
     $user = User::find($id);
+    $post = new Post($request->all());
     $join = Join::find($joinid);
-    $relationUser = $post->user()->associate($user);
-    $relationUser->save();
+    $user->post()->save($post);
     $relation = $post->join()->associate($join);
     $relation->save();
-    return  $post;
+    return  $user->post;
 });
 
 Route::post('editposts/{id}', function(Request $request, $id) {
