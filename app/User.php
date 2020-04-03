@@ -9,7 +9,7 @@ class User extends NeoEloquent
 {
     protected $label = 'User'; 
     protected $fillable = ['name','account','detail','profile', 'sex','api_token','fire_token'];
-    public function join()
+    public function create()
     {
         return $this->hasOne('App\Join');
     }

@@ -66,15 +66,15 @@ Route::get('joins/{id}', function($id) {
 Route::post('joins/{id}', function(Request $request, $id) {
     $user = User::find($id);
     $join = new Join($request->all());
-    $user->join()->save($join);
-    return  $user->join;
+    $user->create()->save($join);
+    return  $user->create;
 });
 
-/*Route::put('joins/{id}', function(Request $request, $id) {
+Route::post('editjoins/{id}', function(Request $request, $id) {
     $join = Join::findOrFail($id);
     $join->update($request->all());
     return $join;
-});*/
+});
 
 Route::delete('joins/{id}', function($id) {
     Join::find($id)->delete();
