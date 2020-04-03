@@ -60,7 +60,7 @@ Route::get('joins', function() {
 });
  
 Route::get('joins/{id}', function($id) {
-    return Join::find($id);
+    return Join::with('user')->find($id);
 });
 
 Route::post('joins/{id}', function(Request $request, $id) {
@@ -86,11 +86,11 @@ Route::delete('joins/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::get('posts', function() {
-    return Post::with('join')->paginate(10);
+    return Post::with('join')->with('join')->paginate(10);
 });
  
 Route::get('posts/{id}', function($id) {
-    $post = Post::with('user')->find($id);
+    $post = Post::with('user')->with('join')->find($id);
     //$user = $post->right();
     return $post;
 });
