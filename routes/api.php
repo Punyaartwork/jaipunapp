@@ -34,8 +34,9 @@ Route::get('users/{id}', function($id) {
 });
 
 Route::post('users', function(Request $request) {
+    //$user = User::create($request->all());
     //return Card::create($request->all);
-    return   $request->all();
+    return   $user = User::create($request->all());
 });
 
 Route::put('users/{id}', function(Request $request, $id) {
