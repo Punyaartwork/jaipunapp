@@ -15,10 +15,10 @@ class Join extends NeoEloquent
     }
     public function posts()
     {
-        return $this->belongsToMany('App\Post', 'POSTIN');
+        return $this->belongsToMany('App\Post');
     }
     public function stays()
     {
-        return $this->belongsToMany('App\Stay', 'STAYIN');
+        return $this->belongsToMany('App\Stay');
     }
 }
