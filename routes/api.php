@@ -130,7 +130,7 @@ Route::get('postinjoin/{id}', function($id) {
     $join = Join::find($id);
     //$stay = $join->stays;showjoin
     //return $join;
-    return  $join->posts;
+    return  $join->posts()->paginate(10);
     //return $stay->with('join')->with('user')->paginate(10);
 });
 /*
