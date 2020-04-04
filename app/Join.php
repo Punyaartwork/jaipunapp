@@ -15,7 +15,7 @@ class Join extends NeoEloquent
     }
     public function posts()
     {
-        return $this->belongsToMany('App\Post', 'JOINED')->with('user');
+        return $this->belongsToMany('App\Post', 'JOINED');
     }
     public function stays()
     {
