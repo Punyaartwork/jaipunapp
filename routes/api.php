@@ -135,9 +135,10 @@ Route::get('stays', function() {
 });
 
 Route::get('stayinjoin/{id}', function($id) {
-    $join = Join::with('stays')->find($id);
-    //$stay = $join->stays;
-    return $join;
+    //$join = Join::with('stays')->find($id);
+    //$stay = $join->stays;showjoin
+    //return $join;
+    return  Stay::with('showjoin')->get();
     //return $stay->with('join')->with('user')->paginate(10);
 });
  
