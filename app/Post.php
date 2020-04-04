@@ -11,7 +11,7 @@ class Post extends NeoEloquent
     protected $fillable = ['post','postPhoto','postTime', 'postLike','postComment'];
     public function join()
     {
-        return $this->hasOne('App\Join');
+        return $this->hasOne('App\Join', 'JOINED');
     }
     public function user()
     {
