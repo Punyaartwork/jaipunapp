@@ -125,6 +125,14 @@ Route::delete('posts/{id}', function($id) {
     Post::find($id)->delete();
     return 204;
 });
+
+Route::get('postinjoin/{id}', function($id) {
+    $join = Join::find($id);
+    //$stay = $join->stays;showjoin
+    //return $join;
+    return  $join->posts;
+    //return $stay->with('join')->with('user')->paginate(10);
+});
 /*
 |--------------------------------------------------------------------------
 | POST API Routes Post
