@@ -38,9 +38,9 @@ Route::get('users/{id}', function($id) {
 
 Route::get('checkusers/{name}', function($name) {
     if (User::where('name', $name)->first()) {
-        return true;
+        return 'true';
      }else{
-        return false;
+        return 'false';
      }
 });
 
