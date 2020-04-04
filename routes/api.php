@@ -65,7 +65,7 @@ Route::delete('users/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::get('joins', function() {
-    return Join::with('user')->paginate(10);
+    return Join::with('user')->orderBy('joinItem','desc')->paginate(10);
 });
  
 Route::get('joins/{id}', function($id) {
@@ -132,6 +132,12 @@ Route::delete('posts/{id}', function($id) {
 */
 Route::get('stays', function() {
     return Stay::with('join')->with('user')->paginate(10);
+});
+
+Route::get('stayinjoin/{id}', function($id) {
+    $join = Join::find($id);
+    $stay = $join->stays;
+    return $stay->with('join')->with('user')->paginate(10);
 });
  
 Route::get('stays/{id}', function($id) {
