@@ -36,6 +36,14 @@ Route::get('users/{id}', function($id) {
     return User::find($id);
 });
 
+Route::get('checkusers/{name}', function($name) {
+    if (User::where('name', '=', $name)->exists()) {
+        return true;
+     }else{
+        return false;
+     }
+});
+
 Route::post('users', function(Request $request) {
     return User::create($request->all());
 });
