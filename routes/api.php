@@ -39,7 +39,7 @@ Route::post('users', function(Request $request) {
     return User::create($request->all());
 });
 
-Route::put('users/{id}', function(Request $request, $id) {
+Route::post('editusers/{id}', function(Request $request, $id) {
     $user = User::findOrFail($id);
     $user->update($request->all());
     return $user;
@@ -56,7 +56,7 @@ Route::delete('users/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::get('joins', function() {
-    return Join::all();
+    return Join::with('user')->paginate(10);
 });
  
 Route::get('joins/{id}', function($id) {
@@ -114,6 +114,42 @@ Route::post('editposts/{id}', function(Request $request, $id) {
 
 Route::delete('posts/{id}', function($id) {
     Post::find($id)->delete();
+    return 204;
+});
+/*
+|--------------------------------------------------------------------------
+| POST API Routes Post
+|--------------------------------------------------------------------------
+*/
+Route::get('stays', function() {
+    return Stay::with('join')->with('user')->paginate(10);
+});
+ 
+Route::get('stays/{id}', function($id) {
+    $stay = Stay::with('user')->with('join')->find($id);
+    //$user = $post->right();
+    return $stay;
+});
+
+Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
+    $user = User::find($id);
+    $stay = new Stay($request->all());
+    $join = Join::find($joinid);
+    $user->posts()->save($stay);
+    $stay->join()->save($join);
+    //$relation = $post->join()->associate($join);
+    //$relation->save();
+    return  $user->stays;
+});
+
+Route::post('editstays/{id}', function(Request $request, $id) {
+    $stay = Stay::findOrFail($id);
+    $stay->update($request->all());
+    return $stay;
+});
+
+Route::delete('stays/{id}', function($id) {
+    Stay::find($id)->delete();
     return 204;
 });
 /*

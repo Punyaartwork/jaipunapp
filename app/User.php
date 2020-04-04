@@ -17,4 +17,8 @@ class User extends NeoEloquent
     {
         return $this->hasMany('App\Post', 'POSTED');
     }
+    public function stays()
+    {
+        return $this->hasMany('App\Stay', 'STAYED');
+    }
 }
