@@ -135,7 +135,7 @@ Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user = User::find($id);
     $stay = new Stay($request->all());
     $join = Join::find($joinid);
-    $user->posts()->save($stay);
+    $user->stays()->save($stay);
     $stay->join()->save($join);
     //$relation = $post->join()->associate($join);
     //$relation->save();
