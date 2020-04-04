@@ -136,8 +136,8 @@ Route::get('stays', function() {
 
 Route::get('stayinjoin/{id}', function($id) {
     $join = Join::find($id)->with('stays')->get();
-    $stay = $join->stays;
-    return $join->stays;
+    //$stay = $join->stays;
+    return $join;
     //return $stay->with('join')->with('user')->paginate(10);
 });
  
