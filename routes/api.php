@@ -7,6 +7,7 @@ use LaravelFCM\Message\PayloadNotificationBuilder;
 use App\User;
 use App\Join;
 use App\Post;
+use App\Stay;
 /*
 |--------------------------------------------------------------------------
 | API Routes
