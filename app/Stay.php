@@ -17,8 +17,4 @@ class Stay extends NeoEloquent
     {
         return $this->belongsTo('App\User', 'STAYED');
     }
-    public function showjoin()
-    {
-        return $this->morphTo('App\Join', 'ON');
-    }
 }
