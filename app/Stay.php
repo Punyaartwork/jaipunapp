@@ -11,7 +11,7 @@ class Stay extends NeoEloquent
     protected $fillable = ['stay','stayTime','stayLike', 'stayComment'];
     public function join()
     {
-        return $this->hasOne('App\Join');
+        return $this->hasOne('App\Join', 'JOINED');
     }
     public function user()
     {
