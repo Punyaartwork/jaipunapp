@@ -65,7 +65,7 @@ Route::delete('users/{id}', function($id) {
 |--------------------------------------------------------------------------
 */
 Route::get('joins', function() {
-    return Join::with('user')->latest()->paginate();;
+    return DB::table('Join')->orderBy('joinItem','DESC')->with('user')->paginate(10);
 });
  
 Route::get('joins/{id}', function($id) {
