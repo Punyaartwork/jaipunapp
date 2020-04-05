@@ -8,7 +8,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 class Stay extends NeoEloquent
 {
     protected $label = 'Stay'; 
-    protected $fillable = ['stay','stayTime','stayLike', 'stayComment'];
+    protected $fillable = ['stay','stayPhoto','stayTime','stayLike', 'stayComment'];
     public function join()
     {
         return $this->hasOne('App\Join', 'JOINED');
