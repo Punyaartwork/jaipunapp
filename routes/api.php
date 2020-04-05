@@ -108,6 +108,8 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user = User::find($id);
     $post = new Post($request->all());
     $join = Join::find($joinid);
+    $join->joinIiem =+ 1;
+    $join->save();
     $user->posts()->save($post);
     $post->join()->save($join);
     //$relation = $post->join()->associate($join);
@@ -160,6 +162,8 @@ Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user = User::find($id);
     $stay = new Stay($request->all());
     $join = Join::find($joinid);
+    $join->joinIiem =+ 1;
+    $join->save();
     $user->stays()->save($stay);
     $stay->join()->save($join);
     //$relation = $post->join()->associate($join);
