@@ -67,6 +67,21 @@ Route::delete('users/{id}', function($id) {
 Route::get('joins', function() {
     return Join::latest('joinItem')->with('user')->paginate(10);
 });
+
+Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
+   /* $sqlDistance = DB::raw('( 6371 * acos( cos( radians(' . $lat . ') ) 
+       * cos( radians( goodLatitude ) ) 
+       * cos( radians( goodLongitude ) 
+       - radians(' . $lng  . ') ) 
+       + sin( radians(' . $lat  . ') ) 
+       * sin( radians( goodLatitude ) ) ) )');
+    return DB::table('goods')
+    ->select('*')
+    ->selectRaw("{$sqlDistance} AS distance")
+    ->orderBy('distance')
+    ->paginate(4);*/
+    return DB::select('MATCH (n) RETURN n');
+});
  
 Route::get('joins/{id}', function($id) {
     return Join::with('user')->find($id);
