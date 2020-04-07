@@ -80,7 +80,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     ->selectRaw("{$sqlDistance} AS distance")
     ->orderBy('distance')
     ->paginate(4);*/
-    return DB::table('User')->count();
+    return DB::table('User')->select('*');
 });
  
 Route::get('joins/{id}', function($id) {
