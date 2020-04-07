@@ -102,13 +102,13 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
         ]);
     }
     if(isset($_GET['page'])){
-        $end = $_GET['page']*10;
+        $end = ($_GET['page']*10)-1;
         $start = $end-10;
     }else{
-        $start = 0; $end = 10;
+        $start = 0; $end = 9;
     }
     //return response()->json($collection->sortBy('distance')->slice(0, 20));
-    return $start;
+    return $start.'---'.$end;
 });
  
 Route::get('joins/{id}', function($id) {
