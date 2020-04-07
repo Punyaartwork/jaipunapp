@@ -101,7 +101,11 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
             'user' => $joins->user
         ]);
     }
-    $start =( $_GET['page']==null) ? 0 :  $_GET['page'];
+    if($_GET['page']==null){
+        $start = 0;
+    }else{
+        $start = $_GET['page'];
+    }
     //return response()->json($collection->sortBy('distance')->slice(0, 20));
     return $start;
 });
