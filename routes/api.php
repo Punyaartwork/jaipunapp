@@ -98,7 +98,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
             - deg2rad( $lng ) ) 
             + sin( deg2rad($lat ) ) 
             * sin( deg2rad( $joins->joinLatitude) ) ) ),
-            'user' => $joins->user,
+            'user' => $joins->user
         ]);
     }
     return response()->json($collection);
