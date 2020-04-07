@@ -83,7 +83,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     $collection =  new \Illuminate\Database\Eloquent\Collection;
     $joins = Join::latest('joinItem')->with('user')->get();
     foreach($joins as $joins){
-        $collection->push(['joinLatitude'=>$joins->joinLatitude]);
+        $collection->push(['joinLatitude'=>$joins->joinLatitude,'joinLongitude'=>$joins->joinLongitude,'distance'=>0]);
     }
     return response()->json($collection);
 });
