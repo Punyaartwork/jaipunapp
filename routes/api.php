@@ -80,7 +80,11 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     ->selectRaw("{$sqlDistance} AS distance")
     ->orderBy('distance')
     ->paginate(4);*/
-    return Join::latest('joinItem')->with('user')->get();
+    $joins = Join::latest('joinItem')->with('user')->get();
+    foreach($joins as $joins){
+        $data = array_pull($joins , 'joinLatitude');
+    }
+    return $data;
 });
  
 Route::get('joins/{id}', function($id) {
