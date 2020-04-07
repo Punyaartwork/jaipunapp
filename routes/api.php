@@ -102,8 +102,8 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
         ]);
     }
     if(isset($_GET['page'])){
-        $start = $_GET['page']*10;
-        $end = $start+10;
+        $end = $_GET['page']*10;
+        $start = $end-10;
     }else{
         $start = 0; $end = 10;
     }
