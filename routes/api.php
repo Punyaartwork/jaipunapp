@@ -84,11 +84,11 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     $joins = Join::latest('joinItem')->with('user')->get();
     foreach($joins as $joins){
         $collection->push([
-            'join' => $joins->$join,
-            'joinPhoto' => $joins->$joinPhoto,
-            'joinLocation' => $joins->$joinLocation,
-            'joinItem' => $joins->$joinItem,
-            'joinTime' => $joins->$joinTime,
+            'join' => $joins->join,
+            'joinPhoto' => $joins->joinPhoto,
+            'joinLocation' => $joins->joinLocation,
+            'joinItem' => $joins->joinItem,
+            'joinTime' => $joins->joinTime,
             'joinLatitude'=>$joins->joinLatitude,
             'joinLongitude'=>$joins->joinLongitude,
             'distance'=>
