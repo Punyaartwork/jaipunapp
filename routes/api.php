@@ -107,8 +107,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     }else{
         $start = 0; $end = 9;
     }
-    //return response()->json($collection->sortBy('distance')->slice(0, 20));
-    return $start.'==='.$end;
+    return response()->json($collection->sortBy('distance')->slice($start, $end));
 });
  
 Route::get('joins/{id}', function($id) {
