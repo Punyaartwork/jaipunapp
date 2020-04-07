@@ -101,7 +101,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
             'user' => $joins->user
         ]);
     }
-    return response()->json($collection);
+    return response()->json($collection->orderBy('distance', 'DESC'));
 });
  
 Route::get('joins/{id}', function($id) {
