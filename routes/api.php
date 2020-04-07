@@ -80,11 +80,12 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     ->selectRaw("{$sqlDistance} AS distance")
     ->orderBy('distance')
     ->paginate(4);*/
+    $collection =  new \Illuminate\Database\Eloquent\Collection;
     $joins = Join::latest('joinItem')->with('user')->get();
     foreach($joins as $joins){
-        $data = $joins;
+        $collection->push($joins);
     }
-    return $data;
+    return response()->json($collection);
 });
  
 Route::get('joins/{id}', function($id) {
