@@ -83,13 +83,22 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     $collection =  new \Illuminate\Database\Eloquent\Collection;
     $joins = Join::latest('joinItem')->with('user')->get();
     foreach($joins as $joins){
-        $collection->push(['joinLatitude'=>$joins->joinLatitude,'joinLongitude'=>$joins->joinLongitude,'distance'=>
-        ( 6371 * acos( cos( deg2rad($lat) ) 
-       * cos( deg2rad( $joins->joinLatitude) ) 
-       * cos( deg2rad( $joins->joinLongitude) 
-       - deg2rad( $lng ) ) 
-       + sin( deg2rad($lat ) ) 
-       * sin( deg2rad( $joins->joinLatitude) ) ) )
+        $collection->push([
+            'join' => $joins->$join,
+            'joinPhoto' => $joins->$joinPhoto,
+            'joinLocation' => $joins->$joinLocation,
+            'joinItem' => $joins->$joinItem,
+            'joinTime' => $joins->$joinTime,
+            'joinLatitude'=>$joins->joinLatitude,
+            'joinLongitude'=>$joins->joinLongitude,
+            'distance'=>
+            ( 6371 * acos( cos( deg2rad($lat) ) 
+            * cos( deg2rad( $joins->joinLatitude) ) 
+            * cos( deg2rad( $joins->joinLongitude) 
+            - deg2rad( $lng ) ) 
+            + sin( deg2rad($lat ) ) 
+            * sin( deg2rad( $joins->joinLatitude) ) ) ),
+            'user' => $joins->user,
         ]);
     }
     return response()->json($collection);
