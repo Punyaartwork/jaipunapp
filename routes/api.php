@@ -101,7 +101,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
             'user' => $joins->user
         ]);
     }
-    if($_GET['page']==null){
+    if(isset($_GET['page'])){
         $start = 0;
     }else{
         $start = $_GET['page'];
