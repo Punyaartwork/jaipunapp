@@ -82,9 +82,9 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     ->paginate(4);*/
     $joins = Join::latest('joinItem')->with('user')->get();
     foreach($joins as $joins){
-        $data = array_add($joins , 'joinLatitude');
+        $data = array_pull($joins , 'joinLatitude');
     }
-    return $data;
+    return $joins ;
 });
  
 Route::get('joins/{id}', function($id) {
