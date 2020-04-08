@@ -118,6 +118,8 @@ Route::get('joins/{id}', function($id) {
 
 Route::post('joins/{id}', function(Request $request, $id) {
     $user = User::find($id);
+    $user->intjoins = $user->intjoins+1;
+    $user->save();
     $join = new Join($request->all());
     $user->joins()->save($join);
     return  $user->joins;
@@ -150,6 +152,8 @@ Route::get('posts/{id}', function($id) {
 
 Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user = User::find($id);
+    $user->intposts = $user->intposts +1;
+    $user->save();
     $post = new Post($request->all());
     $join = Join::find($joinid);
     $join->joinItem = $join->joinItem  + 1;
@@ -204,6 +208,8 @@ Route::get('stays/{id}', function($id) {
 
 Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user = User::find($id);
+    $user->intstays = $user->intstays+1;
+    $user->save();
     $stay = new Stay($request->all());
     $join = Join::find($joinid);
     $join->joinItem = $join->joinItem + 1;
