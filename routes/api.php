@@ -93,11 +93,11 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
             'joinLatitude'=>$joins->joinLatitude,
             'joinLongitude'=>$joins->joinLongitude,
             'distance'=>
-            ( 6371 * acos( cos( deg2rad($lat) ) 
+            ( 6371 * acos( cos( deg2rad((float)$lat) ) 
             * cos( deg2rad( $joins->joinLatitude) ) 
             * cos( deg2rad( $joins->joinLongitude) 
-            - deg2rad( $lng ) ) 
-            + sin( deg2rad($lat ) ) 
+            - deg2rad( (float)$lng ) ) 
+            + sin( deg2rad((float)$lat ) ) 
             * sin( deg2rad( $joins->joinLatitude) ) ) ),
             'user' => $joins->user
         ]);
