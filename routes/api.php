@@ -101,7 +101,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
  
 Route::get('mejoins/{id}', function($id) {
     $user = User::find($id);
-    return  $user->joins;
+    return  $user->joins()->paginate(10);
 });
 
 Route::get('joins/{id}', function($id) {
