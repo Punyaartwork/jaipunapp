@@ -69,17 +69,6 @@ Route::get('joins', function() {
 });
 
 Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
-   /* $sqlDistance = DB::raw('( 6371 * acos( cos( radians(' . $lat . ') ) 
-       * cos( radians( goodLatitude ) ) 
-       * cos( radians( goodLongitude ) 
-       - radians(' . $lng  . ') ) 
-       + sin( radians(' . $lat  . ') ) 
-       * sin( radians( goodLatitude ) ) ) )');
-    return DB::table('goods')
-    ->select('*')
-    ->selectRaw("{$sqlDistance} AS distance")
-    ->orderBy('distance')
-    ->paginate(4);*/
     $collection =  new \Illuminate\Database\Eloquent\Collection;
     $joins = Join::latest('joinItem')->with('user')->get();
     foreach($joins as $joins){
@@ -110,6 +99,11 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     return response()->json($collection->sortBy('distance')->slice($start, $end));
 });
  
+Route::get('mejoins/{id}', function($id) {
+    $user = User::find($id);
+    return  $user->joins();
+});
+
 Route::get('joins/{id}', function($id) {
     return Join::with('user')->find($id);
 });
