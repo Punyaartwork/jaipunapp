@@ -15,10 +15,10 @@ class User extends NeoEloquent
     }
     public function posts()
     {
-        return $this->hasMany('App\Post', 'POSTED')->with('user')->latest();
+        return $this->hasMany('App\Post', 'POSTED')->with('user')->with('join')->latest();
     }
     public function stays()
     {
-        return $this->hasMany('App\Stay', 'STAYED')->with('user')->latest();
+        return $this->hasMany('App\Stay', 'STAYED')->with('user')->with('join')->latest();
     }
 }
