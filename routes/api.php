@@ -59,6 +59,18 @@ Route::delete('users/{id}', function($id) {
     return 204;
 });
 
+Route::get('mejoins/{id}', function($id) {
+    $user = User::find($id);
+    return  $user->joins()->paginate(10);
+});
+Route::get('meposts/{id}', function($id) {
+    $user = User::find($id);
+    return  $user->posts()->paginate(10);
+});
+Route::get('mestays/{id}', function($id) {
+    $user = User::find($id);
+    return  $user->stays()->paginate(10);
+});
 /*
 |--------------------------------------------------------------------------
 | POST API Routes Join
@@ -99,10 +111,6 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     return response()->json($collection->sortBy('distance')->slice($start, $end));
 });
  
-Route::get('mejoins/{id}', function($id) {
-    $user = User::find($id);
-    return  $user->joins()->paginate(10);
-});
 
 Route::get('joins/{id}', function($id) {
     return Join::with('user')->find($id);
