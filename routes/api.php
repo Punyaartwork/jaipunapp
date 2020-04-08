@@ -54,6 +54,23 @@ Route::post('editusers/{id}', function(Request $request, $id) {
     return $user;
 });
 
+
+Route::post('setbackground/{id}', function(Request $request, $id) {
+    $user = User::findOrFail($id);
+    $user->background = $request->background;
+    $user->save();
+    return $user;
+});
+
+
+Route::post('setdetail/{id}', function(Request $request, $id) {
+    $user = User::findOrFail($id);
+    $user->detail = $request->detail;
+    $user->save();
+    return $user;
+});
+
+
 Route::delete('users/{id}', function($id) {
     User::find($id)->delete();
     return 204;
