@@ -177,9 +177,13 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $join->save();
     $user->posts()->save($post);
     $post->join()->save($join);
+    $peoples = $join->user()->first();
+    $people = User::find($peoples->id);
+    $people->intpeople = $people->intpeople +1;
+    $people->save();
     //$relation = $post->join()->associate($join);
     //$relation->save();
-    return  $join->user()->first();
+    return  $user->posts;
 });
 
 Route::post('editposts/{id}', function(Request $request, $id) {
@@ -233,8 +237,10 @@ Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $join->save();
     $user->stays()->save($stay);
     $stay->join()->save($join);
-    //$relation = $post->join()->associate($join);
-    //$relation->save();
+    $peoples = $join->user()->first();
+    $people = User::find($peoples->id);
+    $people->intpeople = $people->intpeople +1;
+    $people->save();
     return  $user->stays;
 });
 
