@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<html lang="en"><head></head><body class="" style="
+<html lang="en">
+<head>
+<title><?php echo $join->join ?></title>
+</head>
+<body class="" style="
     margin: 0px;
     background: #fafafa;
 ">
