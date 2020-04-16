@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/join/{id}', function ($id) {
-    if(App\Join::with('user')->find($id)->exists())
+    if(App\Join::with('user')->find($id)->count() > 0)
     {
         $join = App\Join::with('user')->find($id);
         $posts = $join->posts()->paginate(10);
