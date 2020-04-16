@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel='shortcut icon' href='/jaipun.ico' type='image/x-icon'>     
 <html lang="en">
 <head>
-<title><?php echo $join->join ?></title>
+<title><?php echo $join->join ?>  by  <?php echo $join->user->name ?></title>
 </head>
 <body class="" style="
     margin: 0px;
