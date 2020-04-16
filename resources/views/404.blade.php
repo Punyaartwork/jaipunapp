@@ -1,116 +1,256 @@
 <html lang="en"><head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/jaipunround.ico" type="image/x-icon">  
 <title>JaiPun 404 Page</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel='shortcut icon' href='/jaipunround.ico' type='image/x-icon'>  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-:root {
-	--pink1: #EF73CB;
-	--pink2: #DC5F89;
-}
-
-body, html {
-	margin: 0;
-	overflow: hidden;
-	position: relative;
-}
-
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Lato");
 body {
-	align-items: center;
-	background-image: linear-gradient(to bottom right, var(--pink1), var(--pink2));
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Roboto', sans-serif;
-	justify-content: center;
-	height: 100vh;
-	text-align: center;
+  background: #D3DEEA;
 }
 
-.container h1 {
-	font-size: 10em;
-	margin: 0 0 0.5em;
-	line-height: 10px;
+.top {
+  margin-top: 30px;
 }
 
-.container p {
-	font-size: 1.2em;
-	line-height: 26px;
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-top: -40px;
 }
 
-.container small {
-	opacity: 0.7;
+.ghost {
+  width: 50%;
+  height: 53%;
+  left: 25%;
+  top: 10%;
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  background: #EDEDED;
+  border: 1px solid #BFC0C0;
+  border-bottom: none;
+  animation: float 2s ease-out infinite;
 }
 
-.container a {
-	color: #eee;
+.ghost-copy {
+  width: 50%;
+  height: 53%;
+  left: 25%;
+  top: 10%;
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  background: #EDEDED;
+  border: 1px solid #BFC0C0;
+  border-bottom: none;
+  animation: float 2s ease-out infinite;
+  z-index: 0;
 }
 
-.circle {
-	background-image: linear-gradient(to top right, var(--pink1), var(--pink2));
-	border-radius: 50%;
-	position: absolute;
-	z-index: -1;
+.face {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  top: 20%;
 }
 
-.circle.small {
-	top: 200px;
-	left: 150px;
-	width: 100px;
-	height: 100px;
+.eye, .eye-right {
+  position: absolute;
+  background: #585959;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  top: 40%;
 }
 
-.circle.medium {
-	background-image: linear-gradient(to bottom left, var(--pink1), var(--pink2));
-	bottom: -70px;
-	left: 0;
-	width: 200px;
-	height: 200px;
+.eye {
+  left: 25%;
 }
 
-.circle.big {
-	top: -100px;
-	right: -50px;
-	width: 400px;
-	height: 400px;
+.eye-right {
+  right: 25%;
 }
 
-@media screen and (max-width: 480px) {
-	.container h1 {
-		font-size: 8em;
-	}
-	
-	.container p {
-		font-size: 1em;
-	}
+.mouth {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 10px;
+  height: 10px;
+  border: 3px solid;
+  border-radius: 50%;
+  border-color: transparent #585959 #585959 transparent;
+  transform: rotate(45deg);
+}
+
+.one, .two, .three, .four {
+  position: absolute;
+  background: #EDEDED;
+  top: 85%;
+  width: 25%;
+  height: 23%;
+  border: 1px solid #BFC0C0;
+  z-index: 0;
+}
+
+.one {
+  border-radius: 0 0 100% 30%;
+  left: -1px;
+}
+
+.two {
+  left: 23%;
+  border-radius: 0 0 50% 50%;
+}
+
+.three {
+  left: 50%;
+  border-radius: 0 0 50% 50%;
+}
+
+.four {
+  left: 74.5%;
+  border-radius: 0 0 30% 100%;
+}
+
+.shadow {
+  position: absolute;
+  width: 30%;
+  height: 7%;
+  background: #BFC0C0;
+  left: 35%;
+  top: 80%;
+  border-radius: 50%;
+  animation: scale 2s infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes float {
+  50% {
+    transform: translateY(15px);
+  }
+}
+.bottom {
+  margin-top: 10px;
+}
+
+/*text styling*/
+h1 {
+  font-family: "Abril Fatface", serif;
+  color: #EDEDED;
+  text-align: center;
+  font-size: 9em;
+  margin: 0;
+  text-shadow: -1px 0 #BFC0C0, 0 1px #BFC0C0, 1px 0 #BFC0C0, 0 -1px #BFC0C0;
+}
+
+h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #BFC0C0;
+  margin-top: -20px;
+  font-weight: 900;
+}
+
+p {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #585959;
+  font-size: .6em;
+  margin-top: -20px;
+  text-transform: uppercase;
+}
+
+.search {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/*search style*/
+.search-bar {
+  border: 1px solid #BFC0C0;
+  padding: 5px;
+  height: 20px;
+  margin-left: -30px;
+  width: 200px;
+  outline: none;
+}
+.search-bar:focus {
+  border: 1px solid #D3DEEA;
+}
+
+.search-btn {
+  position: absolute;
+  width: 30px;
+  height: 32px;
+  border: 1px solid #BFC0C0;
+  background: #BFC0C0;
+  text-align: center;
+  color: #EDEDED;
+  cursor: pointer;
+  font-size: 1em;
+  outline: none;
+}
+.search-btn:hover {
+  background: #EDEDED;
+  border: 1px solid #EDEDED;
+  color: #BFC0C0;
+  transition: all .2s ease;
+}
+
+.btn {
+  background: #EDEDED;
+  padding: 15px 20px;
+  margin: 5px;
+  color: #585959;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-size: .6em;
+  letter-spacing: 1px;
+  border: 0;
+}
+.btn:hover {
+  background: #BFC0C0;
+  transition: all .4s ease-out;
 }
 
 footer {
-	background-color: #222;
-	color: #fff;
-	bottom: 0;
-	position: fixed;
-	left: 0;
-	right: 0;
-	letter-spacing: 1px;
-	text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 10px;
+  color: #EA7996;
+  letter-spacing: 3px;
+  font-family: "Lato", sans-serif;
 }
-
-footer p {
-	font-size: 1em;
-	margin: 5px 0;
-}
-
-footer i {
-	color: red;
-}
-
 footer a {
-	color: #3C97BF;
-	text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #7d7d7d;
 }
 </style>
 <script>
@@ -123,22 +263,36 @@ footer a {
 </script>
 </head>
 <body translate="no">
-<div class="container">
+<div id="background"></div>
+<div class="top">
 <h1>404</h1>
-<p>
-The link you clicked may be broken or the <br> page may have been removed.
-</p>
-<small>Visit the <a href="https://florin-pop.com" target="_blank">home page</a> or <a href="https://florin-pop.com/contact" target="_blank">contact</a> me</small>
-<div class="circle small"></div>
-<div class="circle medium"></div>
-<div class="circle big"></div>
+<h3>page not found</h3>
 </div>
-<footer>
-<p>
-Created with <i class="fa fa-heart"></i> by
-<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-</p>
-</footer>
+<div class="container">
+<div class="ghost-copy">
+<div class="one"></div>
+<div class="two"></div>
+<div class="three"></div>
+<div class="four"></div>
+</div>
+<div class="ghost">
+<div class="face">
+<div class="eye"></div>
+<div class="eye-right"></div>
+<div class="mouth"></div>
+</div>
+</div>
+<div class="shadow"></div>
+</div>
+<div class="bottom">
+<p>Boo, looks like a ghost stole this page!</p>
+
+<div class="buttons">
+
+
+</div>
+</div>
+
 
 
 </body></html>

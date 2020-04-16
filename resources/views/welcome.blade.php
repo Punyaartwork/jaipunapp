@@ -1,95 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel='shortcut icon' href='/jaipunround.ico' type='image/x-icon'>     
+<title>JaiPun - Home page</title>
+<link href="//fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,600" rel="stylesheet" type="text/css">
+<style>
+body {
+  color: #252525;
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
 
-        <title>Laravel</title>
+.me {
+  padding: 10em 0;
+  max-width: 26.25em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.me__image {
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+.me__name {
+  font: 700 2.5em "Montserrat", sans-serif;
+}
+.me__iam {
+  padding-left: .4em;
+  font-size: 1.25em;
+  font-weight: 600;
+  letter-spacing: .26em;
+  color: #555;
+}
+.me__name, .me__iam {
+  margin: 0;
+}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+a {
+  display: inline-block;
+  margin-top: 2em;
+  padding: .625em 1.6em;
+  border-radius: 1em;
+  color: #fff;
+  font-size: .865em;
+  font-weight: 600;
+  text-decoration: none;
+  background: #31b1df;
+  transition: background .5s ease;
+}
+a:hover {
+  background: #1e9ac6;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="me">
+<img src="https://sv1.picz.in.th/images/2020/04/16/UfzD5Q.png" alt="Miguel Quispe - Front-end Developer" class="me__image">
+<h2 class="me__name">JaiPun application</h2>
+<h1 class="me__iam">Location Social medial</h1>
+<a href="https://play.google.com/store/apps/details?id=com.JaiPun" title="View Profile LinkedIn">START TO DOWNLOAD</a>
+</div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+<script src="https://static.codepen.io/assets/editor/iframe/iframeRefreshCSS-e03f509ba0a671350b4b363ff105b2eb009850f34a2b4deaadaa63ed5d970b37.js"></script>
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+</body></html>
