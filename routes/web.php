@@ -15,6 +15,10 @@ Route::get('/', function () {
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
     return view('welcome');
 });
+Route::get('/join', function () {
+    //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
+    return view('join');
+});
 Route::get('/set/{name}', function ($name)  {
     //$user = App\Test::create(['name' => $name, 'email' => 'some@email.com']);
     return view('welcome');
