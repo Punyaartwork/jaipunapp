@@ -110,6 +110,7 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
             'joinTime' => $joins->joinTime,
             'joinLatitude'=>$joins->joinLatitude,
             'joinLongitude'=>$joins->joinLongitude,
+            'joinDistance'=>$joins->joinDistance,
             'distance'=>
             ( 6371 * acos( cos( deg2rad((float)$lat) ) 
             * cos( deg2rad( $joins->joinLatitude) ) 
