@@ -26,3 +26,8 @@ Route::get('/set/{name}', function ($name)  {
     //$user = App\Test::create(['name' => $name, 'email' => 'some@email.com']);
     return view('welcome');
 });
+
+// 404 Route Handler
+Route::any('{url_param}', function() {
+    abort(404, '404 Error. Page not found!');
+})->where('url_param', '.*');
