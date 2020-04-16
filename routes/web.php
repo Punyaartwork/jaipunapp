@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/join/{id}', function ($id) {
-    $join = App\Join::with('user')->where('joinTime',$id);
+    $join = App\Join::with('user')->find($id);
     //$join->posts()->paginate(10);
     //$join->stays;
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
