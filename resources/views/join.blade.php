@@ -10,7 +10,7 @@
     margin-right: auto;
     background: #fff;
 ">
-        <img src="https://jaipunapp.s3-ap-southeast-1.amazonaws.com/photos/1586697434.png" alt="W3Schools.com" style="
+        <img src="<?php echo $join->joinPhoto ?>" alt="W3Schools.com" style="
     width: 100%;
 ">
  <div style="
@@ -21,14 +21,14 @@
     <div style="
     font-size: 20px;
     font-weight: bold;
-">บูชาเจดีย์ด้วยดอกบัว</div><div style="
+"><?php echo $join->join ?></div><div style="
     color: #888;
-">แท่นดอกบัวหน้าเจดีย์</div><div style="
+"><?php echo $join->joinLocation ?></div><div style="
     color: #999;
     font-size: 14px;
 ">ดูแผนที่</div><p></p>
 
-<div style=""><img src="https://jaipunapp.s3.amazonaws.com/profile%2F1586697548.png" alt="W3Schools.com" style="
+<div style=""><img src="<?php echo $join->user->profile ?>" alt="W3Schools.com" style="
     width: 35px;
     border-radius: 100px;
     ">
@@ -41,11 +41,11 @@
 <div style="
     font-size: 18px;
     font-weight: bold;
-">punyapath</div><div style="
+"><?php echo $join->user->name ?></div><div style="
     color: #777;
     margin-top: 4px;
-">@punyapth</div>
-<?php echo $join ?>
+"><?php echo $join->user->account ?></div>
+
         
 </div>
 </div>
