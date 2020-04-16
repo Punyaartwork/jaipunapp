@@ -60,50 +60,72 @@
             <div style="
     font-size: 20px;
 ">คุณมาที่นี่เพราะอะไร</div>
-    
-    <img src="https://jaipunapp.s3.amazonaws.com/profile%2F1586697548.png" alt="W3Schools.com" style="
+
+@foreach($stays as $stays)
+
+    <img src="<?php echo $stays->user->profile ?>" alt="W3Schools.com" style="
     width: 40px;
     border-radius: 100px;
     border: 2px solid #70D2C7;
     ">
     
+@endforeach
+
     
         </div>
 
 <div>
 
+
+
+@foreach($posts as $posts)
 <div style="
     padding: 15px;
     border-bottom: 1px solid #eee;
-"><img src="https://jaipunapp.s3.amazonaws.com/profile%2F1586697548.png" alt="W3Schools.com" style="
+">
+
+    <img src="<?php echo $posts->user->profile ?>" alt="W3Schools.com" style="
     width: 40px;
     border-radius: 100px;
     margin-bottom: 10px;
     ">
     <div style="
-    display: inline-block;
-    margin-left: 10px;
-">
-    
+        display: inline-block;
+        margin-left: 10px;
+    ">
+            
+        <div style="
+            font-size: 16px;
+            font-weight: bold;
+        "><?php echo $posts->user->name ?>
+        <div style="
+            color: #777;
+            margin-top: 4px;
+            font-size: 12px;
+            display: inline;
+        ">  <?php echo $posts->user->account ?></div>
 
-<div style="
-    font-size: 16px;
-    font-weight: bold;
-">punyapath<div style="
-    color: #777;
-    margin-top: 4px;
-    font-size: 12px;
-    display: inline;
-">  @punyapth</div>
-  </div><div style="font-size: 12p;">เอาแอพมาทดลองใช้</div>
-<div style="
-    font-size: 12px;
-    color: #999;
-">2020-04-06 11:02:04</div>
+        </div>
+    
+        <div style="font-size: 12p;"><?php echo $posts->post ?></div>
+        <div style="
+            font-size: 12px;
+            color: #999;
+        "><?php echo $posts->created_at ?>
+        </div>
+
+    </div>
+
+</div>
+
+
+@endforeach
+
+
+
 
         
-</div>
-</div>
+
 
 
 

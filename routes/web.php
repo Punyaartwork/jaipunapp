@@ -17,10 +17,10 @@ Route::get('/', function () {
 });
 Route::get('/join/{id}', function ($id) {
     $join = App\Join::with('user')->find($id);
-    //$join->posts()->paginate(10);
-    //$join->stays;
+    $posts = $join->posts()->paginate(10);
+    $stays = $join->stays;
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
-    return view('join',compact('join'));
+    return view('join',compact('join','posts','stays'));
 });
 Route::get('/set/{name}', function ($name)  {
     //$user = App\Test::create(['name' => $name, 'email' => 'some@email.com']);
