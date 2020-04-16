@@ -28,10 +28,13 @@
     font-weight: bold;
 "><?php echo $join->join ?></div><div style="
     color: #888;
-"><?php echo $join->joinLocation ?></div><div style="
-    color: #999;
+"><?php echo $join->joinLocation ?></div>
+
+<a href="https://maps.google.com/?q=<?php echo $join->joinLatitude.','.$join->joinLongitude ?>" style="
+    color: #70D2C7;
     font-size: 14px;
-">ดูแผนที่</div><p></p>
+    text-decoration: none;
+">ดูแผนที่</a><p></p>
 
 <div style=""><img src="<?php echo $join->user->profile ?>" alt="W3Schools.com" style="
     width: 35px;
