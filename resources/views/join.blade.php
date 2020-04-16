@@ -45,7 +45,7 @@
     color: #777;
     margin-top: 4px;
 ">@punyapth</div>
-
+<?php echo $join ?>
         
 </div>
 </div>
