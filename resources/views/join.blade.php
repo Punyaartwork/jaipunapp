@@ -145,7 +145,7 @@
 <div style="
     width: 100%;
     background: #ffffffe0;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     border-bottom: 1px solid #eee;
