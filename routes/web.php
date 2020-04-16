@@ -28,6 +28,6 @@ Route::get('/set/{name}', function ($name)  {
 });
 
 // 404 Route Handler
-Route::any('{url_param}', function() {
-    abort(404, '404 Error. Page not found!');
-})->where('url_param', '.*');
+Route::any('/{page?}',function(){
+    return View::make('404');
+  })->where('page','.*');
