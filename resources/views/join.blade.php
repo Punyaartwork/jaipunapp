@@ -163,10 +163,12 @@
 
     
 
-<div style="
+<a href="/" style="
     display: inline-block;
     margin-left: 5px;
+    text-decoration: none;
 ">
+    
     
     <div style="
     font-weight: bold;
@@ -182,7 +184,7 @@
 
 </div>
 
-</div><div style="
+</a><div style="
     display: inline;
     position: absolute;
     right: 20px;

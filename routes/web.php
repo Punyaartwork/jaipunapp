@@ -16,11 +16,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/join/{id}', function ($id) {
-    $join = App\Join::with('user')->find($id);
-    $posts = $join->posts()->paginate(10);
-    $stays = $join->stays;
-    //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
-    return view('join',compact('join','posts','stays'));
+    if(App\Join::with('user')->find($id)->exists())
+    {
+        $join = App\Join::with('user')->find($id);
+        $posts = $join->posts()->paginate(10);
+        $stays = $join->stays;
+        //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
+        return view('join',compact('join','posts','stays'));
+    }else{
+        return View::make('404');
+    }
 });
 Route::get('/set/{name}', function ($name)  {
     //$user = App\Test::create(['name' => $name, 'email' => 'some@email.com']);
