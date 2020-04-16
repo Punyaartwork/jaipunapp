@@ -173,6 +173,7 @@
     <div style="
     font-weight: bold;
     font-size: 16px;
+    color: #000;
 ">JaiPun</div>
     <div style="
     font-size: 12px;
