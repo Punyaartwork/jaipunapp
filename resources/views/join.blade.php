@@ -139,4 +139,76 @@
 
 </div></div>
     
+
+
+
+<div style="
+    width: 100%;
+    background: #ffffffe0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid #eee;
+">
+    <div style="
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    padding-left: 15px;
+">
+    <img src="https://sv1.picz.in.th/images/2020/04/16/UfzD5Q.png" style="
+    width: 35px;
+    ">
+
+    
+
+<div style="
+    display: inline-block;
+    margin-left: 5px;
+">
+    
+    <div style="
+    font-weight: bold;
+    font-size: 16px;
+">JaiPun</div>
+    <div style="
+    font-size: 12px;
+    color: #888;
+    width: 100%;
+">ดาวน์โหลดแอพเพื่อเข้าร่วมกิจกรรมกับเรา
+
+    
+
+</div>
+
+</div><div style="
+    display: inline;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+">
+    
+    
+
+<a href="https://apps.apple.com/th/app/jaipun/id1476142057" style="
+    font-weight: bold;
+    font-size: 14px;
+    display: inline;
+    text-decoration: none;
+    color: #2196F3;
+">iOS</a>  |  <a href="https://play.google.com/store/apps/details?id=com.JaiPun" style="
+    font-weight: bold;
+    font-size: 14px;
+    display: inline;
+    text-decoration: none;
+    color: #2196F3;
+">Android</a>
+    
+
+</div>
+</div>
+</div>
+
+
 </body></html>
