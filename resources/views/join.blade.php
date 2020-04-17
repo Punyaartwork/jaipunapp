@@ -36,6 +36,8 @@
     text-decoration: none;
 ">ดูแผนที่</a><p></p>
 
+<?php if($join->joinDetail != null){echo '<div style="margin-top:10px">'.$join->joinDetail.'</div>';} ?>
+
 <div style=""><img src="<?php echo $join->user->profile ?>" alt="W3Schools.com" style="
     width: 35px;
     border-radius: 100px;

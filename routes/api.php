@@ -183,6 +183,37 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $people = User::find($peoples->id);
     $people->intpeople = $people->intpeople +1;
     $people->save();
+
+    /* START SYSTEM notification */
+    if(strlen($people->api_token) > 1){
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setTimeToLive(60*20);
+
+        $notificationBuilder = new PayloadNotificationBuilder('มีผู้จอยร่วมกับคุณ');
+        $notificationBuilder->setBody('ณ '.$join->joinLocation)
+                            ->setSound('default');
+
+        $dataBuilder = new PayloadDataBuilder();
+        $dataBuilder->addData(['a_data' => 'my_data']);
+
+        $option = $optionBuilder->build();
+        $notification = $notificationBuilder->build();
+        $data = $dataBuilder->build();
+        $token = $people->api_token;
+        $downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
+
+        $downstreamResponse->numberSuccess();
+        $downstreamResponse->numberFailure();
+        $downstreamResponse->numberModification();
+        $downstreamResponse->tokensToDelete();
+        $downstreamResponse->tokensToModify();
+        $downstreamResponse->tokensToRetry();
+        $downstreamResponse->tokensWithError();
+    }
+    
+    /* END SYSTEM notification */
+
+
     //$relation = $post->join()->associate($join);
     //$relation->save();
     return  $user->posts;
@@ -243,6 +274,36 @@ Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $people = User::find($peoples->id);
     $people->intpeople = $people->intpeople +1;
     $people->save();
+    /* START SYSTEM notification */
+    if(strlen($people->api_token) > 1){
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setTimeToLive(60*20);
+
+        $notificationBuilder = new PayloadNotificationBuilder('มีผู้ปักหมุดบนจุดจอยของคุณ');
+        $notificationBuilder->setBody('ณ '.$join->joinLocation)
+                            ->setSound('default');
+
+        $dataBuilder = new PayloadDataBuilder();
+        $dataBuilder->addData(['a_data' => 'my_data']);
+
+        $option = $optionBuilder->build();
+        $notification = $notificationBuilder->build();
+        $data = $dataBuilder->build();
+        $token = $people->api_token;
+        $downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
+
+        $downstreamResponse->numberSuccess();
+        $downstreamResponse->numberFailure();
+        $downstreamResponse->numberModification();
+        $downstreamResponse->tokensToDelete();
+        $downstreamResponse->tokensToModify();
+        $downstreamResponse->tokensToRetry();
+        $downstreamResponse->tokensWithError();
+    }
+    
+    /* END SYSTEM notification */
+
+
     return  $user->stays;
 });
 
