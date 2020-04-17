@@ -260,10 +260,10 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     //$stay = $join->stays;showjoin
     //return $join;
     $collection = collect($join->stays);
-    
-    return  $collection->filter(function ($value, $key) {
-        return $value->id = 452;
-    });;
+    $result =$collection->filter(function ($value, $key) {
+        return $value->user->id = $user_id;
+    });
+    return  $result;
     //return $stay->with('join')->with('user')->paginate(10);
 });
  
