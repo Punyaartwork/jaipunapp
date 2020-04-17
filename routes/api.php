@@ -261,7 +261,7 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     //return $join;
     $collection = collect($join->stays);
     $result =$collection->filter(function ($value, $key) {
-        return $value->user->id == 1;
+        return $value->user->id == $user_id;
     });
     //if($collection->contains($user_id)){$result = 'true';}else{$result ='false';}
     return  $result; 
