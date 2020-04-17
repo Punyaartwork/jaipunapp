@@ -259,10 +259,10 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     //$stay = $join->stays;showjoin
     //return $join;
     $result = $join->stays;
-    $filtered = $result->filter(function($value, $key, $user_id) {
-        return $value->id == $user_id;
+    $array = array_filter($result , function ($item, $user_id) {
+        return $item['id'] == $user_id;
     });
-    return  $filtered;
+    return  $array;
     //return $stay->with('join')->with('user')->paginate(10);
 });
  
