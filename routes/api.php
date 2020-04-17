@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
@@ -258,11 +259,8 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     $join = Join::find($id);
     //$stay = $join->stays;showjoin
     //return $join;
-    $result = $join->stays;
-    $array = array_filter($result , function ($item) {
-        return $item['id'] == 452;
-    });
-    return  $array;
+    $collection = collect($join->stays);
+    return  $collection;
     //return $stay->with('join')->with('user')->paginate(10);
 });
  
