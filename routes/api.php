@@ -255,24 +255,6 @@ Route::get('stayinjoin/{id}', function($id) {
     //return $stay->with('join')->with('user')->paginate(10);
 });
 
-Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
-    $join = Join::find($id);
-    //$stay = $join->stays;showjoin
-    //return $join;
-    $collection = collect($join->stays);
-    $checkexist =$collection->filter(function ($value, $key) use ($user_id) {
-        return $value->user->id == $user_id;
-    })->first();
-    if(strlen($checkexist) > 10){
-        $result = 'true';
-    }else{
-        $result ='false';
-    }
-    return  $result; 
-    //$result;
-    //return $stay->with('join')->with('user')->paginate(10);
-});
- 
 Route::get('stays/{id}', function($id) {
     $stay = Stay::with('user')->with('join')->find($id);
     //$user = $post->right();
