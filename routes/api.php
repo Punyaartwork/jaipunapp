@@ -259,7 +259,7 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     //$stay = $join->stays;showjoin
     //return $join;
     $result = $join->stays;
-    $filtered = $result->filter(function($value, $key) {
+    $filtered = $result->filter(function($value, $key, $user_id) {
         return $value->user->id == $user_id;
     });
     return  $filtered;
