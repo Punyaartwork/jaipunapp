@@ -264,7 +264,7 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
         return $value->user->id == 1;
     });*/
     if($collection->contains($user_id)){$result = 'true';}else{$result ='false';}
-    return  $result; 
+    return  $user_id; 
     //$result;
     //return $stay->with('join')->with('user')->paginate(10);
 });
