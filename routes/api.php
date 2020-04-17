@@ -263,7 +263,7 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     $result =$collection->filter(function ($value, $key) use ($user_id) {
         return $value->user->id == $user_id;
     })->first();
-    //if($collection->contains($user_id)){$result = 'true';}else{$result ='false';}
+    if(strlen($result) > 10){$result = 'true';}else{$result ='false';}
     return  $result; 
     //$result;
     //return $stay->with('join')->with('user')->paginate(10);
