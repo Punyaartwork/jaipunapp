@@ -253,6 +253,18 @@ Route::get('stayinjoin/{id}', function($id) {
     return  $join->stays;
     //return $stay->with('join')->with('user')->paginate(10);
 });
+
+Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
+    $join = Join::find($id);
+    //$stay = $join->stays;showjoin
+    //return $join;
+    $result = $join->stays;
+    $filtered = $result->filter(function($value, $key) {
+        return $value->user->id == $user_id;
+    });
+    return  $filtered;
+    //return $stay->with('join')->with('user')->paginate(10);
+});
  
 Route::get('stays/{id}', function($id) {
     $stay = Stay::with('user')->with('join')->find($id);
