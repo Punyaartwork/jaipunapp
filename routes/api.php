@@ -260,10 +260,14 @@ Route::get('checkstayinjoin/{id}/{user_id}', function($id,$user_id) {
     //$stay = $join->stays;showjoin
     //return $join;
     $collection = collect($join->stays);
-    $result =$collection->filter(function ($value, $key) use ($user_id) {
+    $checkexist =$collection->filter(function ($value, $key) use ($user_id) {
         return $value->user->id == $user_id;
     })->first();
-    if(strlen($result) > 10){$result = 'true';}else{$result ='false';}
+    if(strlen($checkexist) > 10){
+        $result = 'true';
+    }else{
+        $result ='false';
+    }
     return  $result; 
     //$result;
     //return $stay->with('join')->with('user')->paginate(10);
@@ -283,8 +287,18 @@ Route::post('stays/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $join = Join::find($joinid);
     $join->joinItem = $join->joinItem + 1;
     $join->save();
-    $user->stays()->save($stay);
-    $stay->join()->save($join);
+    $collection = collect($join->stays);
+    $checkexist =$collection->filter(function ($value, $key) use ($id) {
+        return $value->user->id == $id;
+    })->first();
+    if(strlen($checkexist) > 10){
+        Stay::find($checkexist->id)->delete();
+        $user->stays()->save($stay);
+        $stay->join()->save($join);
+    }else{
+        $user->stays()->save($stay);
+        $stay->join()->save($join);
+    }
     $peoples = $join->user()->first();
     $people = User::find($peoples->id);
     $people->intpeople = $people->intpeople +1;
