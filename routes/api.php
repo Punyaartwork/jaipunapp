@@ -130,6 +130,33 @@ Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     }
     return response()->json($collection->sortBy('distance')->values()->slice($start, $end));
 });
+
+Route::get('joindistancefirst/{lat}/{lng}', function($lat,$lng) {
+    $collection =  new \Illuminate\Database\Eloquent\Collection;
+    $joins = Join::latest('joinItem')->with('user')->get();
+    foreach($joins as $joins){
+        $collection->push([
+            'id' => $joins->id,
+            'join' => $joins->join,
+            'joinPhoto' => $joins->joinPhoto,
+            'joinLocation' => $joins->joinLocation,
+            'joinItem' => $joins->joinItem,
+            'joinTime' => $joins->joinTime,
+            'joinLatitude'=>$joins->joinLatitude,
+            'joinLongitude'=>$joins->joinLongitude,
+            'joinDistance'=>$joins->joinDistance,
+            'distance'=>
+            ( 6371 * acos( cos( deg2rad((float)$lat) ) 
+            * cos( deg2rad( $joins->joinLatitude) ) 
+            * cos( deg2rad( $joins->joinLongitude) 
+            - deg2rad( (float)$lng ) ) 
+            + sin( deg2rad((float)$lat ) ) 
+            * sin( deg2rad( $joins->joinLatitude) ) ) ),
+            'user' => $joins->user
+        ]);
+    }
+    return response()->json($collection->sortBy('distance')->first());
+});
  
 
 Route::get('joins/{id}', function($id) {
