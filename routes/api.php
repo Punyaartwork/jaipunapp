@@ -147,6 +147,7 @@ Route::get('joindistancefirst/{lat}/{lng}', function($lat,$lng) {
             'joinType' => $joins->joinType,
             'joinResult' => $joins->joinResult,
             'joinShow' => $joins->joinShow,
+            'joinDate' => $joins->joinDate,
             'joinLocation' => $joins->joinLocation,
             'joinItem' => $joins->joinItem,
             'joinTime' => $joins->joinTime,
