@@ -297,7 +297,7 @@ Route::get('checkpostinjoin/{id}', function($id) {
     //$stay = $join->stays;showjoin
     //return $join;
     $datapost = collect($join->posts);
-    return $datapost->max('joinReview');
+    return $datapost->max('postReview');
     //return  $datapost->count();
     //return $stay->with('join')->with('user')->paginate(10);
 });
