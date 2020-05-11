@@ -288,8 +288,7 @@ Route::get('checkpostinjoin/{id}', function($id) {
     $join = Join::find($id);
     //$stay = $join->stays;showjoin
     //return $join;
-    $collection =  new \Illuminate\Database\Eloquent\Collection;
-    $datapost = $collection->push($join->posts);
+    $datapost = collect($join->posts);
     return  $datapost->values();
     //return $stay->with('join')->with('user')->paginate(10);
 });
