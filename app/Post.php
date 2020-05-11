@@ -8,7 +8,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 class Post extends NeoEloquent
 {
     protected $label = 'Post'; 
-    protected $fillable = ['post','postPhoto','postTime', 'postLike','postComment'];
+    protected $fillable = ['post','postPhoto','postTime', 'postLike','postComment','postReview'];
     public function join()
     {
         return $this->hasOne('App\Join', 'JOINED');

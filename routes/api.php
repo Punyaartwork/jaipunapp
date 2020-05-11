@@ -283,6 +283,14 @@ Route::get('postinjoin/{id}', function($id) {
     return  $join->posts()->paginate(10);
     //return $stay->with('join')->with('user')->paginate(10);
 });
+
+Route::get('checkpostinjoin/{id}', function($id) {
+    $join = Join::find($id);
+    //$stay = $join->stays;showjoin
+    //return $join;
+    return  $join->posts()->max('id');
+    //return $stay->with('join')->with('user')->paginate(10);
+});
 /*
 |--------------------------------------------------------------------------
 | POST API Routes Post

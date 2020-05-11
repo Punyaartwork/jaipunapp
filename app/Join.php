@@ -8,7 +8,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 class Join extends NeoEloquent
 {
     protected $label = 'Join'; 
-    protected $fillable = ['join','joinPhoto','joinDetail','joinType','joinResult','joinShow','joinItem','joinLocation','joinLatitude', 'joinLongitude','joinDistance','joinTime','joinDate'];
+    protected $fillable = ['join','joinPhoto','joinDetail','joinType','joinResult','joinShow','joinItem','joinLocation','joinLatitude', 'joinLongitude','joinDistance','joinTime','joinDate','joinReview'];
     public function user()
     {
         return $this->belongsTo('App\User', 'JOINED');
