@@ -221,8 +221,7 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
     $user->save();
     $post = new Post($request->all());
     $join = Join::find($joinid);
-    $join->joinItem = $join->joinItem  + 1;
-    $join->save();
+
     $user->posts()->save($post);
     $post->join()->save($join);
     $peoples = $join->user()->first();
@@ -262,6 +261,15 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
 
     //$relation = $post->join()->associate($join);
     //$relation->save();
+
+    /* ADD REVIEW TO JOIN  START */
+    $datapost = collect($join->posts);
+    $sumreview = $datapost->max('postReview');
+    $countpost = $datapost->count();
+    $join->joinItem = $join->joinItem  + 1;
+    $join->joinReview =  $sumreview/$countpost;
+    $join->save();
+    /* ADD REVIEW TO JOIN  END */
     return  $user->posts;
 });
 
