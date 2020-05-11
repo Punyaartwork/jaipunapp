@@ -198,7 +198,7 @@ Route::delete('joins/{id}', function($id) {
 });
 
 Route::get('searchjoins/{text}', function($text) {
-    return Join::latest('joinDate')->with('user')->where('join', '=~', '(?i).*'.$text.'*.')->paginate(10);
+    return Join::latest('joinDate')->with('user')->where('join', '=~', '.*'.$text.'.*')->paginate(10);
 });
 /*
 |--------------------------------------------------------------------------
