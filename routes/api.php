@@ -98,6 +98,10 @@ Route::get('joins', function() {
     return Join::latest('joinItem')->with('user')->paginate(10);
 });
 
+Route::get('datejoins', function() {
+    return Join::latest('joinDate')->with('user')->paginate(10);
+});
+
 Route::get('joindistance/{lat}/{lng}', function($lat,$lng) {
     $collection =  new \Illuminate\Database\Eloquent\Collection;
     $joins = Join::latest('joinItem')->with('user')->get();
@@ -191,6 +195,10 @@ Route::post('editjoins/{id}', function(Request $request, $id) {
 Route::delete('joins/{id}', function($id) {
     Join::find($id)->delete();
     return 204;
+});
+
+Route::get('searchjoins/{text}', function($text) {
+    return Join::latest('joinDate')->with('user')->where('join', 'LIKE', '%'.$text.'%')->paginate(10);
 });
 /*
 |--------------------------------------------------------------------------
