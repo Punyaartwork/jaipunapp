@@ -264,7 +264,7 @@ Route::post('posts/{id}/{joinid}', function(Request $request, $id, $joinid) {
 
     /* ADD REVIEW TO JOIN  START */
     $datapost = collect($join->posts);
-    $sumreview = $datapost->max('postReview');
+    $sumreview = $datapost->sum('postReview');
     $countpost = $datapost->count();
     $join->joinItem = $join->joinItem  + 1;
     $join->joinReview =  $sumreview/$countpost;
@@ -297,7 +297,7 @@ Route::get('checkpostinjoin/{id}', function($id) {
     //$stay = $join->stays;showjoin
     //return $join;
     $datapost = collect($join->posts);
-    return $datapost->max('postReview');
+    return $datapost->sum('postReview');
     //return  $datapost->count();
     //return $stay->with('join')->with('user')->paginate(10);
 });
