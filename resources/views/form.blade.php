@@ -380,7 +380,7 @@ $(document).ready(function(){
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
 
         $.ajax({
-            type: "POST",
+            type : 'POST',
             url: url,
             data: $("#boonForm").serialize(), // serializes the form's elements.
             dataType: 'jsonp',
