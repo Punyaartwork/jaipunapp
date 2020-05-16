@@ -390,11 +390,8 @@ $(document).ready(function(){
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                 'Access-Control-Allow-Origin': "*/*" ,
-                'Accept': 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Connection':'keep-alive',
-                'User-Agent':'PostmanRuntime/7.24.1',
-                'Accept-Encoding':'gzip, deflate, br'
             },  success: function()
             {
                 window.location.href="/boon/<?php echo $boonid ?>";
