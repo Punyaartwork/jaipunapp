@@ -389,8 +389,8 @@ $(document).ready(function(){
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                 'Access-Control-Allow-Origin': "*/*" ,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Accept': 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+                'Content-Type': 'application/x-www-form-urlencoded'
             },  success: function()
             {
                 window.location.href="/boon/<?php echo $boonid ?>";
