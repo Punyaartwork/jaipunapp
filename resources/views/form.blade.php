@@ -385,9 +385,9 @@ $(document).ready(function(){
             data: $("#boonForm").serialize(), // serializes the form's elements.
             dataType: 'jsonp',
             headers: {  'Access-Control-Allow-Origin': "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>" },
-            success: function(data)
+            success: function()
             {
-                alert(data); // show response from the php script.
+                window.location.href="/boon/<?php echo $boonid ?>";
             }
         });
 
