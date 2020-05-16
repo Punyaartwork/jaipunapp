@@ -20,7 +20,8 @@ Route::get('/', function () {
 Route::get('/punboon/{id}', function ($id) {
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
     //return view('welcome');
-    return view('form',compact('id'));
+    $boonid = $id
+    return view('form',compact('boonid'));
 });
 
 Route::get('/boon/{id}', function ($id) {

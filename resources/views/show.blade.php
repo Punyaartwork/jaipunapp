@@ -70,7 +70,12 @@ a:hover {
 
 <div class="me">
 <img src="https://sv1.picz.in.th/images/2020/04/16/UfzD5Q.png" alt="Miguel Quispe - Front-end Developer" class="me__image">
-<h2 class="me__name"><?php echo $json ?></h2>
+
+@foreach($json as $json)
+
+<h2 class="me__name"><?php echo $json->name ?></h2>
+    
+@endforeach
 <h1 class="me__iam">Location Social medial</h1>
 <a href="https://play.google.com/store/apps/details?id=com.JaiPun" title="View Profile LinkedIn">START TO DOWNLOAD</a>
 </div><div class="me" style="
