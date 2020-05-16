@@ -304,7 +304,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form id="boonForm" target="votar" action="https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>"  method="post"><div style="
+<form id="boonForm" ><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -373,7 +373,7 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
- /*   $("#boonForm").submit(function(e) {
+    $("#boonForm").submit(function(e) {
         alert("okokok")
         e.preventDefault(); // avoid to execute the actual submit of the form.
 
@@ -383,7 +383,8 @@ $(document).ready(function(){
         {
             headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer <token>'
             },
             method: "POST",
             body: JSON.stringify({name: "oasd", sex: "asdok"})
@@ -391,7 +392,7 @@ $(document).ready(function(){
         .then(function(res){ console.log(res) })
         .catch(function(res){ console.log(res) })
 
-  });*/
+  });
 });
 </script>
 
