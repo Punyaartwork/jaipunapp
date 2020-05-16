@@ -376,7 +376,7 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: url,
-            data: form.serialize(), // serializes the form's elements.
+            data: $("#boonForm").serialize(), // serializes the form's elements.
             dataType: 'jsonp',
             headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
             success: function(data)
