@@ -366,6 +366,11 @@ z-index:-1;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $("#boonForm").submit(function(e) {
         //alert("okokok")
         e.preventDefault(); // avoid to execute the actual submit of the form.
