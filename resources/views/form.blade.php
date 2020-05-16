@@ -391,13 +391,10 @@ $(document).ready(function(){
             },
             fail: function(xhr, textStatus, errorThrown){
             alert('request failed');
-            }
+            },
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                 'Access-Control-Allow-Origin': "*/*" ,
-            },  success: function()
-            {
-                window.location.href="/boon/<?php echo $boonid ?>";
             }
         }).fail(alert('PA'));
 
