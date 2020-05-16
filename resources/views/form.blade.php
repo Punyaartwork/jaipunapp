@@ -374,16 +374,13 @@ $(document).ready(function(){
     });
     
     $("#boonForm").submit(function(e) {
-        alert("okokok")
+        alert("okokok2")
         e.preventDefault(); // avoid to execute the actual submit of the form.
 
         var form = $(this);
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
         //var url = form.attr("action");
-        var formData = form.serializeArray();
-        $.post(url, formData).done(function (data) {
-            alert(data);
-        });
+        $("#boonForm").ajaxSubmit({url: url, type: 'post'})
 
 
   });
