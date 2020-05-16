@@ -379,17 +379,13 @@ $(document).ready(function(){
 
         var form = $(this);
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
-        fetch(url,
-        {
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify({name: "oasd", sex: "asdok"})
-        })
-        .then(function(res){ console.log(res) })
-        .catch(function(res){ console.log(res) })
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.open('GET', url, true);
+        req.onload  = function() {
+        console.log(req.response);
+        };
+        req.send(null);
 
   });
 });
