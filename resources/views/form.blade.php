@@ -373,7 +373,6 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    header("Access-Control-Allow-Origin: *");
     $("#boonForm").submit(function(e) {
         alert("okokok")
         e.preventDefault(); // avoid to execute the actual submit of the form.
