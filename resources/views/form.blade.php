@@ -8,6 +8,6 @@ sex: <input type="text" name="sex"><br>
 
 <input type="submit">
 </form>
-
+<?php $_GET['id'] ?>
 </body>
 </html>
