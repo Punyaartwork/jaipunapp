@@ -17,14 +17,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/punboon', function () {
+Route::get('/punboon/{id}', function ($id) {
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
     //return view('welcome');
-    return view('form');
+    return view('form',compact('id'));
 });
 
 Route::get('/boon/{id}', function ($id) {
-    $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'+$id), true);
+    $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'.$id), true);
     return view('show',compact('json'));
 });
 
