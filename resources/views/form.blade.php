@@ -364,7 +364,7 @@ z-index:-1;
     //# sourceURL=pen.js
   </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
     $.ajaxSetup({
@@ -384,8 +384,9 @@ $(document).ready(function(){
             url: url,
             data: $("#boonForm").serialize(), // serializes the form's elements.
             dataType: 'jsonp',
-            headers: {  'Access-Control-Allow-Origin': "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>" },
-            success: function()
+            headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },  success: function()
             {
                 window.location.href="/boon/<?php echo $boonid ?>";
             }
