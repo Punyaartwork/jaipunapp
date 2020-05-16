@@ -384,6 +384,7 @@ $(document).ready(function(){
             headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+            'X-HTTP-Method-Override': 'PATCH',
             'Authorization': 'Bearer <token>'
             },
             method: "POST",
