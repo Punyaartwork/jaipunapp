@@ -382,7 +382,7 @@ $(document).ready(function(){
         //var url = form.attr("action");
         var formData = $(form).serializeArray();
         alert(formData)
-        $.post(url, {name : "nam" , detail :"detail" , sex:"falme"})).done(function (data) {
+        $.post(url, {name : "nam" , detail :"detail" , sex:"falme"}).done(function (data) {
             alert(data);
         });
 
