@@ -29,8 +29,12 @@ Route::post('saveboon', function(Request $request) {
     $url = "https://jaipungo.herokuapp.com/punsave/boon1";
    
     $myBody['name'] = "Demo";
-    $request = $client->post($url,  ['body'=>$myBody]);
-    $response = $request->send();
+    $response = $client->request('POST', 'http://www.exmple.com/mydetails', [
+        'form_params' => [
+            'name' => 'george',
+        ]
+    ]);
+
   
     dd($response);
 });
