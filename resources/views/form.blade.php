@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="/jaipunround.ico" type="image/x-icon">     
-<title>JaiPun - Home page</title>
+<title>JaiPun - Room Pun Boon</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <style class="INLINE_PEN_STYLESHEET_ID">
     body {
@@ -209,7 +209,7 @@ z-index:-1;
   }
 }
 
-@keyframes  moveClouds {
+@keyframes    moveClouds {
   0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
@@ -233,7 +233,7 @@ z-index:-1;
             transform: translateY(0px) rotate();
   }
 }
-@keyframes  drift {
+@keyframes    drift {
   0% {
     -webkit-transform: translateY(0px) rotate();
             transform: translateY(0px) rotate();
@@ -288,7 +288,6 @@ z-index:-1;
 
 <div style="
     text-align: center;
-    margin-top: จ;
     color: #2fdaca;
     width: 346px;
     font-size: 28px;
@@ -303,7 +302,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form action="https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid; ?>" method="post"><div style="
+<form action="https://jaipungo.herokuapp.com/punsave/boon1" id="boonForm" method="post"><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -315,15 +314,19 @@ z-index:-1;
 ">ชื่อของคุณ...</div>
 <input type="text" name="name" style="
     width: 95%;
-    height: 30px;
-    padding: 5px;
+    padding: 10px 5px;
     border-radius: 10px;
+    border: 0px;
     ">
+<div style="
+    margin-top: 15px;
+    margin-left: 10px;
+">
 <input type="radio" id="male" name="sex" value="male">
-<label for="male">Male</label><br>
+<label for="male">ชาย</label>
 <input type="radio" id="female" name="sex" value="female">
-<label for="female">Female</label><br>
-
+<label for="female">หญิง</label>
+    </div>
 <div style="
     font-size: 20px;
     margin-bottom: 5px;
@@ -332,12 +335,24 @@ z-index:-1;
 ">รายละเอียดการทำบุญของคุณ...</div>
  <textarea name="detail" rows="4" cols="50" style="
     width: 95%;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
+    border: 0px;
 ">...
 </textarea></div>
 
-<input type="submit">
+<input type="submit" value="แบ่งปันบุญ" style="
+    padding: 20px 60px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 37px;
+    background: #9afff5;
+    border: 0px;
+    border-radius: 25px;
+    margin-top: 25px;
+    color: #234c48;
+">
 </form>
 <!--?php echo $boonid; ?-->
     
@@ -348,5 +363,16 @@ z-index:-1;
     //# sourceURL=pen.js
   </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#boonForm").submit(function(e) {
+      alert("okokok")
+    $.ajax({url: "demo_test.txt", success: function(result){
+      $("#div1").html(result);
+    }});
+  });
+});
+</script>
 
 </body></html>
