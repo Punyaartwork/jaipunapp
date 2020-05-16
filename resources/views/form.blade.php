@@ -377,6 +377,7 @@ $(document).ready(function(){
             type: "POST",
             url: url,
             data: form.serialize(), // serializes the form's elements.
+            dataType: 'jsonp',
             success: function(data)
             {
                 alert(data); // show response from the php script.
