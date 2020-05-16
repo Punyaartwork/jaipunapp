@@ -9,7 +9,6 @@ use App\User;
 use App\Join;
 use App\Post;
 use App\Stay;
-use GuzzleHttp\Client;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,12 +25,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('saveboon', function(Request $request) {
-    $client = new Client();
-    return $res = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
-        'form_params' => [
-            'name' => 'george',
-        ]
-    ]);
+    $client = new \GuzzleHttp\Client();
+    $url = "https://jaipungo.herokuapp.com/punsave/boon1";
+   
+    $myBody['name'] = "Demo";
+    $request = $client->post($url,  ['body'=>$myBody]);
+    $response = $request->send();
+  
+    dd($response);
 });
 /*
 |--------------------------------------------------------------------------
