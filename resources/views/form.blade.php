@@ -383,10 +383,10 @@ $(document).ready(function(){
         {
             headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
             },
             method: "POST",
-            body: JSON.stringify({name: 1, sex: 2})
+            body: JSON.stringify({name: "oasd", sex: "asdok"})
         })
         .then(function(res){ console.log(res) })
         .catch(function(res){ console.log(res) })
