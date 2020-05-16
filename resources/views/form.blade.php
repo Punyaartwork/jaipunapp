@@ -379,24 +379,11 @@ $(document).ready(function(){
 
         var form = $(this);
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
-
-        $.ajax({
-            type : 'POST',
-            url: url,
-            data: form.serialize(), // serializes the form's elements.
-            dataType: 'JSON',
-            timeout: 5000,
-            success: function(data, textStatus ){
-            alert('request successful');
-            },
-            fail: function(xhr, textStatus, errorThrown){
-            alert('request failed');
-            },
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                'Access-Control-Allow-Origin': "*/*" ,
-            }
-        }).fail(alert('PA'));
+        //var url = form.attr("action");
+        var formData = form.serializeArray();
+        $.post(url, formData).done(function (data) {
+            alert(data);
+        });
 
 
   });
