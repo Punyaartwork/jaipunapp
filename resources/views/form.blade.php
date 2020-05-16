@@ -391,7 +391,10 @@ $(document).ready(function(){
             body: JSON.stringify({name: "oasd", sex: "asdok"})
         })
         .then(function(res){ console.log(res) })
-        .catch(function(res){ console.log(res) })
+        .catch(function(res){ console.log(res) }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log("Request failed. jqXHR.status=" + jqXHR.status + ", textStatus=" + textStatus + ", errorThrown=" + errorThrown);
+    });
+        
 
   });
 });
