@@ -384,6 +384,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'POST',
             url: url,
+            crossOrigin: true,
             data: form.serialize(), // serializes the form's elements.
             dataType: 'JSON',
             contentType: "application/json;charset=utf-8",
