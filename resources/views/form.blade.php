@@ -385,6 +385,16 @@ $(document).ready(function(){
             url: url,
             data: form.serialize(), // serializes the form's elements.
             dataType: 'JSON',
+            statusCode: {
+           404: function () {
+                    //do somethign with error 404
+                    alert('Error: 404: Could not contact server.');
+                },
+                500: function () {
+                    //do something with error 500
+                    alert('Error: 500: Server error occurred.');
+                }
+            },
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                 'Access-Control-Allow-Origin': "*/*" ,
