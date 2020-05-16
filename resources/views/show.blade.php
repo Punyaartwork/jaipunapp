@@ -73,7 +73,7 @@ a:hover {
 
 @foreach($json as $json)
 
-<h2 class="me__name"><?php echo $json->name ?></h2>
+<h2 class="me__name"><?php echo $json['name'] ?></h2>
     
 @endforeach
 <h1 class="me__iam">Location Social medial</h1>
