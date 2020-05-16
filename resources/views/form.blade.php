@@ -303,7 +303,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form action="https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>" method="post" id="boonForm" ><div style="
+<form id="boonForm" ><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -367,7 +367,7 @@ z-index:-1;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-   /* $.ajaxSetup({
+    $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
@@ -379,15 +379,24 @@ $(document).ready(function(){
 
         var form = $(this);
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
-        //var url = form.attr("action");
-        var formData = $(form).serializeArray();
-        alert(formData)
-        $.post(url, {name : "nam" , detail :"detail" , sex:"falme"}).done(function (data) {
-            alert(data);
-        });
+
+        $.ajax({
+            type : 'POST',
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            dataType: 'JSON',
+            contentType: "application/json;charset=utf-8",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                'Access-Control-Allow-Origin': "*/*" ,
+            },  success: function()
+            {
+                window.location.href="/boon/<?php echo $boonid ?>";
+            }
+        }).fail(alert('PA'));
 
 
-  });*/
+  });
 });
 </script>
 
