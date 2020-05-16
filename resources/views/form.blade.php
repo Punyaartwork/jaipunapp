@@ -372,6 +372,7 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    
     $("#boonForm").submit(function(e) {
         alert("okokok")
         e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -383,7 +384,7 @@ $(document).ready(function(){
             type : 'POST',
             url: url,
             data: $("#boonForm").serialize(), // serializes the form's elements.
-            dataType: 'jsonp',
+            dataType: 'JSON',
             headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },  success: function()
