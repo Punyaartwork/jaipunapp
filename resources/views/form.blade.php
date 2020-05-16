@@ -387,8 +387,8 @@ $(document).ready(function(){
             dataType: 'JSON',
             contentType: "application/json;charset=utf-8",
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                'Access-Control-Allow-Origin': "*/*" ,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },  success: function()
             {
                 window.location.href="/boon/<?php echo $boonid ?>";
