@@ -383,7 +383,7 @@ $(document).ready(function(){
         {
             headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded'
             },
             method: "POST",
             body: JSON.stringify({name: 1, sex: 2})
