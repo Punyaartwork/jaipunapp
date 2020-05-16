@@ -381,11 +381,11 @@ $(document).ready(function(){
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
 
         $.ajax({
-            type : 'POST',
-            url: url,
+            type : 'GET',
+            url: "https://jaipungo.herokuapp.com/testdata/nasd",
             crossOrigin: true,
-            data: form.serialize(), // serializes the form's elements.
-            dataType: 'JSON',
+            //data: form.serialize(), // serializes the form's elements.
+            //dataType: 'JSON',
             contentType: "application/json;charset=utf-8",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
