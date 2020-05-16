@@ -9,7 +9,7 @@ use App\User;
 use App\Join;
 use App\Post;
 use App\Stay;
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,9 +26,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('saveboon', function(Request $request) {
-    return Http::post('https://jaipungo.herokuapp.com/punsave/boon1', [
-        'name' => 'Steve',
-        'detail' => 'Network Administrator',
+    $client = new Client();
+    return $res = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
+        'form_params' => [
+            'name' => 'george',
+        ]
     ]);
 });
 /*
