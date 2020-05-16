@@ -9,6 +9,7 @@ use App\User;
 use App\Join;
 use App\Post;
 use App\Stay;
+use Illuminate\Support\Facades\Http;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +23,13 @@ use App\Stay;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('saveboon', function(Request $request) {
+    return Http::post('https://jaipungo.herokuapp.com/punsave/boon1', [
+        'name' => 'Steve',
+        'detail' => 'Network Administrator',
+    ]);
 });
 /*
 |--------------------------------------------------------------------------

@@ -1,10 +1,8 @@
-<html>
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="/jaipunround.ico" type="image/x-icon">     
 <title>JaiPun - Room Pun Boon</title>
-<meta name="csrf-token" content="{{ csrf_token() }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <style class="INLINE_PEN_STYLESHEET_ID">
     body {
@@ -304,7 +302,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form id="boonForm" ><div style="
+<form action="/api/saveboon" method="post"><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -365,39 +363,5 @@ z-index:-1;
     //# sourceURL=pen.js
   </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $("#boonForm").submit(function(e) {
-        alert("okokok")
-        e.preventDefault(); // avoid to execute the actual submit of the form.
-
-        var form = $(this);
-        var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
-        fetch("https://httpbin.org/post",
-        {
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'X-HTTP-Method-Override': 'PATCH',
-            'Authorization': 'Bearer <token>'
-            },
-            method: "POST",
-            body: JSON.stringify({name: "oasd", sex: "asdok"})
-        })
-        .then(function(res){ console.log(res) })
-        .catch(function(res){ console.log(res) }).fail(function(jqXHR, textStatus, errorThrown) {
-        console.log("Request failed. jqXHR.status=" + jqXHR.status + ", textStatus=" + textStatus + ", errorThrown=" + errorThrown);
-    });
-        
-
-  });
-});
-</script>
 
 </body></html>
