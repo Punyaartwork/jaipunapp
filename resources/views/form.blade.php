@@ -383,7 +383,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'POST',
             url: url,
-            data: {name:'1111',detail:'3333',sex:'555'}, // serializes the form's elements.
+            data: form.serialize(), // serializes the form's elements.
             dataType: 'JSON',
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -392,7 +392,7 @@ $(document).ready(function(){
             {
                 window.location.href="/boon/<?php echo $boonid ?>";
             }
-        });
+        }).fail(alert('PA'));
 
 
   });
