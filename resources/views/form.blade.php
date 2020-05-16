@@ -379,7 +379,7 @@ $(document).ready(function(){
 
         var form = $(this);
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
-        fetch(url,
+        fetch("https://httpbin.org/post",
         {
             headers: {
             'Accept': 'application/json',
