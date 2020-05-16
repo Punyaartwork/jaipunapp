@@ -303,7 +303,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form id="boonForm" method="post"><div style="
+<form id="boonForm" ><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -373,7 +373,7 @@ $(document).ready(function(){
         }
     });
     $("#boonForm").submit(function(e) {
-        //alert("okokok")
+        alert("okokok")
         e.preventDefault(); // avoid to execute the actual submit of the form.
 
         var form = $(this);
