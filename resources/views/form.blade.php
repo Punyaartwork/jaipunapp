@@ -378,6 +378,7 @@ $(document).ready(function(){
             url: url,
             data: form.serialize(), // serializes the form's elements.
             dataType: 'jsonp',
+            headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
             success: function(data)
             {
                 alert(data); // show response from the php script.
