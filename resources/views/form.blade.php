@@ -302,7 +302,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form action="https://jaipungo.herokuapp.com/punsave/boon1" id="boonForm" method="post"><div style="
+<form id="boonForm" method="post"><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -367,10 +367,23 @@ z-index:-1;
 <script>
 $(document).ready(function(){
     $("#boonForm").submit(function(e) {
-      alert("okokok")
-    $.ajax({url: "demo_test.txt", success: function(result){
-      $("#div1").html(result);
-    }});
+        //alert("okokok")
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        var form = $(this);
+        var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function(data)
+            {
+                alert(data); // show response from the php script.
+            }
+        });
+
+
   });
 });
 </script>
