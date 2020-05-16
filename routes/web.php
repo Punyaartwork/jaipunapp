@@ -13,8 +13,22 @@
 
 Route::get('/', function () {
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
-    return view('welcome');
+    //return view('welcome');
+    return view('home');
 });
+
+Route::get('/punboon', function () {
+    //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
+    //return view('welcome');
+    return view('form');
+});
+
+Route::get('/boon/{id}', function ($id) {
+    $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'+$id), true);
+    return view('join',compact('json'));
+});
+
+
 Route::get('/join/{id}', function ($id) {
     if(App\Join::with('user')->find($id))
     {
