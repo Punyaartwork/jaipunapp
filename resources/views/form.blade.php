@@ -381,7 +381,10 @@ $(document).ready(function(){
         var url = "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>";
         //var url = form.attr("action");
         var formData = $(form).serializeArray();
-        fetch(url ,{method:'post', body: new FormData(form)});
+        alert(formData)
+        $.post(url, {name : "nam" , detail :"detail" , sex:"falme"})).done(function (data) {
+            alert(data);
+        });
 
 
   });
