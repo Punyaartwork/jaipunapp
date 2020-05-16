@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="/jaipunround.ico" type="image/x-icon">     
 <title>JaiPun - Room Pun Boon</title>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <style class="INLINE_PEN_STYLESHEET_ID">
     body {
