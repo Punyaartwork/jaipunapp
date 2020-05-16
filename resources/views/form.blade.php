@@ -386,7 +386,8 @@ $(document).ready(function(){
             data: form.serialize(), // serializes the form's elements.
             dataType: 'JSON',
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                'Access-Control-Allow-Origin': "*/*" ,
             },  success: function()
             {
                 window.location.href="/boon/<?php echo $boonid ?>";
