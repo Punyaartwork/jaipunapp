@@ -378,7 +378,7 @@ $(document).ready(function(){
             url: url,
             data: $("#boonForm").serialize(), // serializes the form's elements.
             dataType: 'jsonp',
-            headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+            headers: {  'Access-Control-Allow-Origin': "https://jaipungo.herokuapp.com/punsave/boon<?php echo $boonid ?>" },
             success: function(data)
             {
                 alert(data); // show response from the php script.
