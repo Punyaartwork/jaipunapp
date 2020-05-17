@@ -1,8 +1,33 @@
+<?php 
+$punname='';
+$punPhoto='';
+$punDetail='';
+
+$id = $boonid;
+
+switch ($favcolor) {
+  case 1:
+    $punname='ตักบาตร';
+    $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWUy8n.png';
+    $punDetail='ปันบุญตักบาตรพระยามเช้า';
+    break;
+  case 2:
+    echo "Your favorite color is blue!";
+    break;
+  case 3:
+    echo "Your favorite color is green!";
+    break;
+  default:
+    echo "Your favorite color is neither red, blue, nor green!";
+}
+
+
+?>
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="/jaipunround.ico" type="image/x-icon">     
-<title>JaiPun - Room Pun Boon</title>
+<title>JaiPun -<?php echo $punname ?> Room</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <style class="INLINE_PEN_STYLESHEET_ID">
     body {
