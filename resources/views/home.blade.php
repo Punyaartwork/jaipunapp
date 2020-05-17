@@ -308,8 +308,8 @@ z-index:-1;
     <style>
     .progress-bg {
       margin: 0 auto;
-      width: 65%;
-      height: 78px;
+      width: 320px;
+     height: 50px;
       border-radius: 10px;
       text-align: center;
       background: url("http://www.atsu.edu/stlclinic/images/progress-bar-bg.jpg") repeat;
@@ -319,10 +319,10 @@ z-index:-1;
     }
 
     .progress-bar {
-      height: 78px;
+      width: 280px;
+      height: 50px;
       border-radius: 10px;
       float: left;
-      width: 50%;
       /* fallback */ 
       background-color: #1c314a; 
       
@@ -346,7 +346,7 @@ z-index:-1;
       font-family: Arial,sans-serif;
       font-size: 2em;
       font-weight: 600;
-      line-height: 78px;
+      line-height: 55px;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -409,7 +409,7 @@ z-index:-1;
       text-align: center;
     }
 
-    body .progress-bg div {
+    .progress-bg div {
       -webkit-animation: progress-bar 2s ease forwards;
       -moz-animation: progress-bar 2s ease forwards;
       -o-animation: progress-bar 2s ease forwards;
@@ -446,7 +446,7 @@ z-index:-1;
     </script>
     <div class="progress-bg">
     <div class="progress-bar">
-    <h3 class="raised">$50,000&nbsp;raised </h3>
+    <h3 class="raised">$100,000&nbsp;raised </h3>
     </div>
     <h3 class="goal">Goal: $100,000</h3>
     </div>
