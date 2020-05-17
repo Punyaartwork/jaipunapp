@@ -533,11 +533,12 @@ z-index:-1;
 $(document).ready(function(){ 
 //alert('Show Page')
 $('#btn').click(function(){
+  $("#loading").show();
   alert("JQUERY WORKS!");
 })
   $("boonButton").click(function(){ 
     alert('click OK')
-    $("loading").show();
+
     document.getElementById("boonForm").submit();
   })
 });
