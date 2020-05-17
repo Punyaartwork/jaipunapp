@@ -304,7 +304,9 @@ z-index:-1;
     margin-right: auto;
 ">จำนวนการปันบุญ</div>
 <!-- start goal -->
-<div>
+<div style="
+    margin-top: 20px;
+">
     <style>
     .progress-bg {
       margin: 0 auto;
@@ -324,27 +326,27 @@ z-index:-1;
       border-radius: 10px;
       float: left;
       /* fallback */ 
-      background-color: #1c314a; 
+      background-color: #4fd8c1; 
       
       /* Safari 4-5, Chrome 1-9 */ 
-      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1c314a), to(#27425f)); 
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4fd8c1), to(#03ffdc)); 
       
       /* Safari 5.1, Chrome 10+ */ 
-      background: -webkit-linear-gradient(top, #1c314a, #27425f); 
+      background: -webkit-linear-gradient(top, #4fd8c1, #03ffdc); 
       
       /* Firefox 3.6+ */ 
-      background: -moz-linear-gradient(top, #1c314a, #27425f); 
+      background: -moz-linear-gradient(top, #4fd8c1, #03ffdc); 
       
       /* IE 10 */ 
-      background: -ms-linear-gradient(top, #1c314a, #27425f); 
+      background: -ms-linear-gradient(top, #4fd8c1, #03ffdc); 
       
       /* Opera 11.10+ */ 
-      background: -o-linear-gradient(top, #1c314a, #27425f);	
+      background: -o-linear-gradient(top, #4fd8c1, #03ffdc);	
     }
 
     .progress-bg h3.goal, .progress-bg h3.raised {
       font-family: Arial,sans-serif;
-      font-size: 2em;
+      font-size: 1em;
       font-weight: 600;
       line-height: 55px;
       margin: 0;
@@ -446,9 +448,9 @@ z-index:-1;
     </script>
     <div class="progress-bg">
     <div class="progress-bar">
-    <h3 class="raised">$100,000&nbsp;raised </h3>
+    <h3 class="raised"><?php echo $count[0]['count'] ?>&nbsp;การปัน </h3>
     </div>
-    <h3 class="goal">Goal: $100,000</h3>
+    <h3 class="goal">เป้าหมาย: 10,000</h3>
     </div>
 </div>
 <!-- end goal -->
