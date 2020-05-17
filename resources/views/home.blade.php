@@ -295,7 +295,7 @@ z-index:-1;
     font-size: 35px;
     margin-left: auto;
     margin-right: auto;
-">200</div><div style="
+"><?php echo $count[0]['count'] ?></div><div style="
     text-align: center;
     color: #666;
     width: 346px;

@@ -621,7 +621,7 @@ z-index:-1;
             margin-top: 4px;
             font-size: 12px;
             display: inline;
-        "><?php echo generate_date_today("d M Y H:i", $json['time']); ?></div>
+        ">   <?php echo generate_date_today("d M Y H:i", $json['time']); ?></div>
         </div>
     </div>
 

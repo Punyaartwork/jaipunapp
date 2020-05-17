@@ -368,7 +368,7 @@ z-index:-1;
     margin-top: 15px;
     margin-left: 10px;
 ">
-<input type="radio" id="male" name="sex" value="male">
+<input type="radio" id="male" name="sex" value="male" checked>>
 <label for="male">ชาย</label>
 <input type="radio" id="female" name="sex" value="female">
 <label for="female">หญิง</label>

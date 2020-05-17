@@ -14,7 +14,8 @@
 Route::get('/', function () {
     //$user = App\Test::create(['name' => 'Tester', 'email' => 'some@email.com']);
     //return view('welcome');
-    return view('home');
+    $count = json_decode(file_get_contents('https://jaipungo.herokuapp.com/countcall'), true);
+    return view('home',compact('count'));
 });
 
 Route::get('/punboon/{id}', function ($id) {
