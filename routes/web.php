@@ -27,7 +27,8 @@ Route::get('/punboon/{id}', function ($id) {
 
 Route::get('/boon/{id}', function ($id) {
     $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'.$id), true);
-    return view('show',compact('json'));
+    $boonid = $id;
+    return view('show',compact('json','boonid'));
 });
 
 
