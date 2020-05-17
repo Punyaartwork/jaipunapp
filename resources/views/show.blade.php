@@ -596,16 +596,18 @@ z-index:-1;
         <div style="
             font-size: 16px;
             font-weight: bold;
+            color:#222;
         "><?php echo $json['name'] ?>
-
+        <div style="
+            color: #777;
+            margin-top: 4px;
+            font-size: 12px;
+            display: inline;
+        "> <?php echo generate_date_today("d M Y H:i", $json['time']); ?></div>
         </div>
     
-        <div style="font-size: 12p;"><?php echo $json['detail'] ?></div>
-        <div style="
-            font-size: 12px;
-            color: #999;
-        "><?php echo generate_date_today("d M Y H:i", $json['time']); ?>
-        </div>
+        <div style="font-size: 12px;"><?php echo $json['detail'] ?></div>
+
 
     </div>
 
