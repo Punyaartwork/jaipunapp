@@ -531,8 +531,8 @@ z-index:-1;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){ 
-alert('Show Page')
-  $("#boonButton").on('click',function(e) {
+//alert('Show Page')
+  $("boonButton").on('click',function(e) {
     $("loading").show();
     document.getElementById("boonForm").submit();
   })
