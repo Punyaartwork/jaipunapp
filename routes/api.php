@@ -24,18 +24,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('saveboon', function(Request $request) {
+Route::post('saveboon/{id}', function(Request $request,$id) {
     $client = new \GuzzleHttp\Client();
-    $url = "https://jaipungo.herokuapp.com/punsave/boon1";
+    $url = "https://jaipungo.herokuapp.com/punsave/boon".$id;
    
-    $myBody['name'] = "Demo";
     $response = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
-        'form_params' => [
-            'name' => 'george',
-        ]
+        'form_params' => [$request->all()]
     ]);
     //dd($response);
-    $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon1'), true);
+    $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'.$id), true);
     return view('show',compact('json'));
 });
 /*
