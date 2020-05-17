@@ -472,7 +472,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form action="/api/saveboon/<?php echo $boonid ?>?count=<?php echo $_GET['count'] ?>" method="post"><div style="
+<form id="boonForm" action="/api/saveboon/<?php echo $boonid ?>?count=<?php echo $_GET['count'] ?>" method="post"><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -482,12 +482,12 @@ z-index:-1;
     margin-left: 10px;
     margin-top: 20px;
 ">ชื่อของคุณ...</div>
-<input type="text" name="name" style="
+<input type="text" name="name" placeholder="ใส่ชื่อเล่น หรือนามแฝงของคุณที่นี่..." autofocus style="
     width: 95%;
     padding: 10px 5px;
     border-radius: 10px;
     border: 0px;
-    ">
+    "required>
 <div style="
     margin-top: 15px;
     margin-left: 10px;
@@ -503,12 +503,12 @@ z-index:-1;
     margin-left: 10px;
     margin-top: 20px;
 ">รายละเอียดการทำบุญของคุณ...</div>
- <textarea name="detail" rows="4" cols="50" style="
+ <textarea  placeholder="รายละเอียดบุญของคุณ..." name="detail" rows="4" cols="50" style="
     width: 95%;
     padding: 10px;
     border-radius: 10px;
     border: 0px;
-">...
+" required>
 </textarea></div>
 
 <input type="submit" value="แบ่งปันบุญ" style="

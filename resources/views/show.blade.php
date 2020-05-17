@@ -599,17 +599,19 @@ z-index:-1;
 <div style="
     padding: 15px;
     border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
 ">
 
 <img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" style="
-    width: 40px;
+    width: 50px;
+    height:50px;
     border-radius: 100px;
     margin-bottom: 10px;
     ">
     <div style="
         display: inline-block;
         margin-left: 10px;
-        width: 70%;
     ">
             
         <div style="font-size: 14px;margin-bottom: 5px;"><?php echo $json['detail'] ?></div><div style="
