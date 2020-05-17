@@ -310,7 +310,7 @@ z-index:-1;
 <div class="cloud-3 cloud">
 <div class="cloud--inner"></div>
 </div>
-</div><img src="https://image.flaticon.com/icons/png/512/2913/2913146.png" alt="Miguel Quispe - Front-end Developer" class="me__image" style="
+</div><img src="<?php echo $punPhoto ?>" alt="Miguel Quispe - Front-end Developer" class="me__image" style="
     width: 80px;
     margin-top: 20px;
     display: block;
@@ -322,7 +322,7 @@ z-index:-1;
     text-align: center;
     font-size: 20px;
     margin-top: 10px;
-">รักษาศีล</div><div style="
+"><?php echo $punname ?></div><div style="
     text-align: center;
     margin-top: จ;
     color: #888;
@@ -330,7 +330,7 @@ z-index:-1;
     line-height: 26px;
     margin-left: auto;
     margin-right: auto;
-">ปันบุญรักษาศีลครบถ้วน</div>
+"><?php echo $punDetail ?></div>
 
 <div style="
     text-align: center;
