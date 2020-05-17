@@ -511,7 +511,7 @@ z-index:-1;
 " required>
 </textarea></div>
 
-<button id="boonButton" style="
+<button id="boonButton" onclick="submitBoon();" style="
     padding: 20px 60px;
     margin-left: auto;
     margin-right: auto;
@@ -532,10 +532,10 @@ z-index:-1;
 <script>
 $(document).ready(function(){ 
 //alert('Show Page')
-  $("boonButton").on('click',function(e) {
+  function submitBoon() {
     $("loading").show();
     document.getElementById("boonForm").submit();
-  })
+  }
 });
 
 </script>
