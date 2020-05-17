@@ -29,7 +29,7 @@ Route::post('saveboon/{id}', function(Request $request,$id) {
     $url = "https://jaipungo.herokuapp.com/punsave/boon".$id;
    
     $response = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
-        'form_params' => [$request->all()]
+        'form_params' => $request->all()
     ]);
     //dd($response);
     $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'.$id), true);
