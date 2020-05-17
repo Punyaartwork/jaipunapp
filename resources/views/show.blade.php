@@ -572,6 +572,17 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
+
+<a href="/" style="
+    text-align: center;
+    color: #333;
+    width: 346px;
+    line-height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+">ปันบุญอื่นอีก</a>
+
 <div style="
     max-width: 400px;
     margin-left: auto;
@@ -586,7 +597,6 @@ z-index:-1;
     <img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" alt="W3Schools.com" style="
     width: 40px;
     border-radius: 100px;
-    margin-bottom: 10px;
     ">
     <div style="
         display: inline-block;
