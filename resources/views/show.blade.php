@@ -42,7 +42,14 @@ switch ($id) {
   $punDetail='โปรดกลับไปหน้าแรกเพื่อเลือกบุญใหม่';
 }
 
-/* =Time&Date Config
+
+
+
+/* =Function
+-------------------------------------------------------------- */
+function generate_date_today($Format, $Timestamp, $Language = "th", $TimeText = true )
+{
+	/* =Time&Date Config
 -------------------------------------------------------------- */
 $SuffixTime = array(
 	"th"=>array(
@@ -134,13 +141,6 @@ $DateThai = array(
 );
 /* =Time&Date Config
 -------------------------------------------------------------- */
-
-
-/* =Function
--------------------------------------------------------------- */
-function generate_date_today($Format, $Timestamp, $Language = "en", $TimeText = true )
-{
-	global $SuffixTime, $DateThai;
 	//return date("i:H d-m-Y", $Timestamp) ." | ". date("i:H d-m-Y", time());
 	if( date("Ymd", $Timestamp) >= date("Ymd", (time()-345600)) && $TimeText)				// Less than 3 days.
 	{
