@@ -604,7 +604,7 @@ z-index:-1;
         <div style="
             font-size: 12px;
             color: #999;
-        "><?php echo generate_date_today("d M Y H:i", $json['time'], "th", true); ?>
+        "><?php echo generate_date_today("d M Y H:i", $json['time']); ?>
         </div>
 
     </div>
