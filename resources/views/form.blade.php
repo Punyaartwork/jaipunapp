@@ -533,6 +533,7 @@ $(document).ready(function(){
 //alert('Show Page')
 
   $("#boonForm").submit(function(e){ 
+    alert('okok')
     $('#boonForm').find('textarea , input').each(function(){
         if($('#boonForm').prop('required')){
           alert('กรุณากรอกให้ครบถ้วน');
