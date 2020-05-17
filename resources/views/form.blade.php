@@ -5,20 +5,41 @@ $punDetail='';
 
 $id = $boonid;
 
-switch ($favcolor) {
+switch ($id) {
   case 1:
     $punname='ตักบาตร';
     $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWUy8n.png';
     $punDetail='ปันบุญตักบาตรพระยามเช้า';
     break;
   case 2:
-    echo "Your favorite color is blue!";
+    $punname='ถวายภัตตาหาร';
+    $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWUmqS.png';
+    $punDetail='ปันบุญถวายภัตตาหารพระ';
     break;
   case 3:
-    echo "Your favorite color is green!";
+    $punname='สวดมนต์';
+    $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWqdF1.png';
+    $punDetail='ปันบุญตักบาตรสวดมนต์เช้าเย็น';
+    break;
+  case 4:
+    $punname='นั่งสมาธิ';
+    $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWq3Cz.png';
+    $punDetail='ปันบุญเกลาจิตใจตัวเอง';
+    break;
+  case 5:
+    $punname='ประทีป';
+    $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWqkgq.png';
+    $punDetail='ปันบุญบูชาพระรัตนตรัย';
+    break;
+  case 6:
+    $punname='รักษาศีล';
+    $punPhoto='https://sv1.picz.in.th/images/2020/05/17/qWq9F8.png';
+    $punDetail='ปันบุญรักษาศีลครบถ้วน';
     break;
   default:
-    echo "Your favorite color is neither red, blue, nor green!";
+  $punname='ไม่มีบุญ';
+  $punPhoto='';
+  $punDetail='โปรดกลับไปหน้าแรกเพื่อเลือกบุญใหม่';
 }
 
 
