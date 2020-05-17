@@ -28,7 +28,7 @@ Route::post('saveboon/{id}', function(Request $request,$id) {
     $client = new \GuzzleHttp\Client();
     $url = "https://jaipungo.herokuapp.com/punsave/boon".$id;
    
-    $response = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
+    $response = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon'.$id, [
         'form_params' => $request->all()
     ]);
     //dd($response);
