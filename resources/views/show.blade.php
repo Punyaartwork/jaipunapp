@@ -348,12 +348,15 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-
+<div>
 @foreach($json as $json)
-  <h2 class="me__name"><?php echo $json['sex'] ?></h2>
-  <h2 class="me__name"><?php echo $json['name'] ?></h2>
-  <h2 class="me__name"><?php echo $json['detail'] ?></h2>    
+  <div>
+    <h2 class="me__name"><?php if($json['sex'] === 'female'){ echo $json['sex']; }else{ echo $json['sex']; }   ?></h2>
+    <h2 class="me__name"><?php echo $json['name'] ?></h2>
+    <h2 class="me__name"><?php echo $json['detail'] ?></h2>    
+  </div>
 @endforeach
+</div>
 <!--?php echo $boonid; ?-->
     
 </div>
