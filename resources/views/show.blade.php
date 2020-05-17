@@ -575,12 +575,19 @@ z-index:-1;
 
 <a href="/" style="
     text-align: center;
-    color: #333;
-    width: 346px;
+    color: #38b3a2;
+    width: 100px;
     line-height: 26px;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
+    text-decoration: none;
+    background: #fff;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 ">ปันบุญอื่นอีก</a>
 
 <div style="
@@ -589,36 +596,33 @@ z-index:-1;
     margin-right: auto;
 ">
 @foreach($json as $json)
-  <div style="
+<div style="
     padding: 15px;
     border-bottom: 1px solid #eee;
 ">
 
-    <img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" alt="W3Schools.com" style="
+<img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" style="
     width: 40px;
     border-radius: 100px;
+    margin-bottom: 10px;
     ">
     <div style="
         display: inline-block;
         margin-left: 10px;
+        width: 70%;
     ">
             
-        <div style="
-            font-size: 16px;
+        <div style="font-size: 14px;margin-bottom: 5px;"><?php echo $json['detail'] ?></div><div style="
+            font-size: 14px;
             font-weight: bold;
             color:#222;
-        "><?php echo $json['name'] ?>
-        <div style="
+        "><?php echo $json['name'] ?><div style="
             color: #777;
             margin-top: 4px;
             font-size: 12px;
             display: inline;
-        "> <?php echo generate_date_today("d M Y H:i", $json['time']); ?></div>
+        "><?php echo generate_date_today("d M Y H:i", $json['time']); ?></div>
         </div>
-    
-        <div style="font-size: 12px;"><?php echo $json['detail'] ?></div>
-
-
     </div>
 
 </div>
