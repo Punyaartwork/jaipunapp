@@ -532,7 +532,6 @@ z-index:-1;
 $(document).ready(function(){ 
 //alert('Show Page')
   $("#boonButton").click(function(){ 
-    alert('click OK')
     $("#loading").show();
     document.getElementById("boonForm").submit();
   })
