@@ -24,20 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('saveboon', function(Request $request) {
-    $client = new \GuzzleHttp\Client();
-    $url = "https://jaipungo.herokuapp.com/punsave/boon1";
-   
-    $myBody['name'] = "Demo";
-    $response = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
-        'form_params' => [
-            'name' => 'george',
-        ]
-    ]);
-
-  
-    dd($response);
-});
 /*
 |--------------------------------------------------------------------------
 | POST API Routes User
