@@ -525,20 +525,15 @@ z-index:-1;
 ">แบ่งปันบุญ</button>
 </form>
 <!--?php echo $boonid; ?-->
-<button id="btn">Click Me</button>   
 </div>
 <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){ 
 //alert('Show Page')
-$('#btn').click(function(){
-  $("#loading").show();
-  alert("JQUERY WORKS!");
-})
-  $("boonButton").click(function(){ 
+  $("#boonButton").click(function(){ 
     alert('click OK')
-
+    $("#loading").show();
     document.getElementById("boonForm").submit();
   })
 });
