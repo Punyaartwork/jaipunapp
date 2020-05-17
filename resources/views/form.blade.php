@@ -532,8 +532,14 @@ z-index:-1;
 $(document).ready(function(){ 
 //alert('Show Page')
   $("#boonButton").click(function(){ 
-    $("#loading").show();
-    document.getElementById("boonForm").submit();
+    $('#boonForm').find('input').each(function(){
+        if(!$(this).prop('required')){
+          $("#loading").show();
+          document.getElementById("boonForm").submit();
+        } else {
+          alert('กรุณากรอกให้ครบถ้วน')
+        }
+    });
   })
 });
 
