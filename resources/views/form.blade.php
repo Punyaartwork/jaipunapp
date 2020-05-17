@@ -529,13 +529,16 @@ z-index:-1;
 </div>
 <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script id="INLINE_PEN_JS_ID">
-    $(document).ready(function(){ 
+<script>
+$(document).ready(function(){ 
+alert('Show Page')
+  $("#boonForm").submit(function(e) {
+    $("loading").show();
+  })
+});
 
-      $("#boonForm").submit(function(e) {
-        $("loading").show();
-      })
-    });
+</script>
+<script id="INLINE_PEN_JS_ID">
     //# sourceURL=pen.js
   </script>
 
