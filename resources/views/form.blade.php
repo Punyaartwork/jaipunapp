@@ -531,11 +531,12 @@ z-index:-1;
 <script>
 $(document).ready(function(){ 
 //alert('Show Page')
-  $("#boonButton").click(function(){ 
+  $("#boonButton").submit(function(e){ 
     $('#boonForm').find('textarea , input').each(function(){
-        if($('#boonForm').prop('required')){
-          return false;
-        } else if(!$('#boonForm').prop('required')){
+        if(!$('#boonForm').prop('required')){
+          alert('กรุณากรอกให้ครบถ้วน');
+          return true;
+        } else if($('#boonForm').prop('required')){
           $("#loading").show();
           document.getElementById("boonForm").submit();
           return true;
