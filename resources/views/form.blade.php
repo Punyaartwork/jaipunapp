@@ -339,7 +339,7 @@ z-index:-1;
     font-size: 28px;
     margin-left: auto;
     margin-right: auto;
-">200</div><div style="
+"><?php echo $_GET['count'] ?></div><div style="
     text-align: center;
     color: #666;
     width: 346px;
@@ -348,7 +348,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form action="/api/saveboon/<?php echo $boonid ?>" method="post"><div style="
+<form action="/api/saveboon/<?php echo $boonid ?>?count=<?php echo $_GET['count'] ?>" method="post"><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -368,7 +368,7 @@ z-index:-1;
     margin-top: 15px;
     margin-left: 10px;
 ">
-<input type="radio" id="male" name="sex" value="male" checked>>
+<input type="radio" id="male" name="sex" value="male" checked>
 <label for="male">ชาย</label>
 <input type="radio" id="female" name="sex" value="female">
 <label for="female">หญิง</label>

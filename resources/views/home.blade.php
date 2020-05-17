@@ -319,7 +319,7 @@ z-index:-1;
     display: table;
 ">
     
-    <a href="/punboon/1" style="
+    <a href="/punboon/1?count=<?php echo $count[1]['count'] ?>" style="
     display: inline-block;
     margin: 30px;
     text-decoration: none;
@@ -353,12 +353,12 @@ z-index:-1;
     margin-right: auto;
     font-size: 15px;
     width: 100px;
-">1000 ครั้ง</div></a>
+"><?php echo $count[1]['count'] ?> ครั้ง</div></a>
         
         
         
         
-            <a href="/punboon/2" style="
+            <a href="/punboon/2?count=<?php echo $count[2]['count'] ?>" style="
     display: inline-block;
     margin: 30px;
     text-decoration: none;
@@ -392,7 +392,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 15px;
     width: 100px;
-">1000 ครั้ง</div></a>
+"><?php echo $count[2]['count'] ?> ครั้ง</div></a>
     </div>
 <div style="
     margin-left: auto;
@@ -400,7 +400,7 @@ z-index:-1;
     display: table;
 ">
     
-    <a href="/punboon/3" style="
+    <a href="/punboon/3?count=<?php echo $count[3]['count'] ?>" style="
     display: inline-block;
     margin: 30px;
     text-decoration: none;
@@ -434,12 +434,12 @@ z-index:-1;
     margin-right: auto;
     font-size: 15px;
     width: 100px;
-">1000 ครั้ง</div></a>
+"><?php echo $count[3]['count'] ?> ครั้ง</div></a>
         
         
         
         
-            <a href="/punboon/4" style="
+            <a href="/punboon/4?count=<?php echo $count[4]['count'] ?>" style="
     display: inline-block;
     margin: 30px;
     text-decoration: none;
@@ -473,14 +473,14 @@ z-index:-1;
     margin-right: auto;
     font-size: 15px;
     width: 100px;
-">1000 ครั้ง</div></a>
+"><?php echo $count[4]['count'] ?> ครั้ง</div></a>
     </div><div style="
     margin-left: auto;
     margin-right: auto;
     display: table;
 ">
     
-    <a href="/punboon/5" style="
+    <a href="/punboon/5?count=<?php echo $count[5]['count'] ?>" style="
     display: inline-block;
     margin: 30px;
     text-decoration: none;
@@ -514,12 +514,12 @@ z-index:-1;
     margin-right: auto;
     font-size: 15px;
     width: 100px;
-">1000 ครั้ง</div></a>
+"><?php echo $count[5]['count'] ?> ครั้ง</div></a>
         
         
         
         
-    <a href="/punboon/6" style="
+    <a href="/punboon/6?count=<?php echo $count[6]['count'] ?>" style="
     display: inline-block;
     margin: 30px;
     text-decoration: none;
@@ -553,7 +553,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 15px;
     width: 100px;
-">1000 ครั้ง</div></a>
+"><?php echo $count[6]['count'] ?> ครั้ง</div></a>
     </div></div>
 <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 <script id="INLINE_PEN_JS_ID">

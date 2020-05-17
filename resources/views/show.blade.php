@@ -563,7 +563,7 @@ z-index:-1;
     font-size: 28px;
     margin-left: auto;
     margin-right: auto;
-">200</div><div style="
+"><?php if(isset($_GET['count'])){echo $_GET['count'];}else{echo 0;} ?></div><div style="
     text-align: center;
     color: #666;
     width: 346px;
