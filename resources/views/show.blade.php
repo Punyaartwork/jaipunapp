@@ -348,10 +348,14 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<div>
+<div style="
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+">
 @foreach($json as $json)
   <div>
-    <h2 class="me__name"><?php if($json['sex'] === 'female'){ echo $json['sex']; }else{ echo $json['sex']; }   ?></h2>
+    <h2 class="me__name"><?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }   ?></h2>
     <h2 class="me__name"><?php echo $json['name'] ?></h2>
     <h2 class="me__name"><?php echo $json['detail'] ?></h2>    
   </div>
