@@ -538,6 +538,7 @@ $(document).ready(function(){
           document.getElementById("boonForm").submit();
         } else {
           alert('กรุณากรอกให้ครบถ้วน')
+          return false
         }
     });
   })
