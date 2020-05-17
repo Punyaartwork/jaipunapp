@@ -302,7 +302,7 @@ z-index:-1;
     margin-right: auto;
     font-size: 14px;
 ">จำนวนการปันบุญ</div>
-<form action="/saveboon" method="post"><div style="
+<form action="/saveboon/<?php echo $boonid ?>" method="post"><div style="
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
