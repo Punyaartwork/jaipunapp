@@ -511,7 +511,7 @@ z-index:-1;
 " required>
 </textarea></div>
 
-<input type="submit" value="แบ่งปันบุญ" style="
+<button id="boonButton" style="
     padding: 20px 60px;
     margin-left: auto;
     margin-right: auto;
@@ -522,7 +522,7 @@ z-index:-1;
     border-radius: 25px;
     margin-top: 25px;
     color: #234c48;
-">
+">แบ่งปันบุญ</button>
 </form>
 <!--?php echo $boonid; ?-->
     
@@ -532,8 +532,9 @@ z-index:-1;
 <script>
 $(document).ready(function(){ 
 alert('Show Page')
-  $("#boonForm").submit(function(e) {
+  $("#boonButton").on('click',function(e) {
     $("loading").show();
+    document.getElementById("boonForm").submit();
   })
 });
 
