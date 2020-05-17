@@ -354,13 +354,38 @@ z-index:-1;
     margin-right: auto;
 ">
 @foreach($json as $json)
-  <div>
-  <img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" style="
-    width: 20px;
+  <div style="
+    padding: 15px;
+    border-bottom: 1px solid #eee;
 ">
-    <div class="me__name"><?php echo $json['name'] ?></div>
-    <div class="me__name"><?php echo $json['detail'] ?></div>    
-  </div>
+
+    <img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" alt="W3Schools.com" style="
+    width: 40px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    ">
+    <div style="
+        display: inline-block;
+        margin-left: 10px;
+    ">
+            
+        <div style="
+            font-size: 16px;
+            font-weight: bold;
+        "><?php echo $json['name'] ?>
+
+        </div>
+    
+        <div style="font-size: 12p;"><?php echo $json['detail'] ?></div>
+        <div style="
+            font-size: 12px;
+            color: #999;
+        "><?php  echo $json['time']?>
+        </div>
+
+    </div>
+
+</div>
 @endforeach
 </div>
 <!--?php echo $boonid; ?-->
