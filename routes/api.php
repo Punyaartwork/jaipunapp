@@ -33,7 +33,8 @@ Route::post('saveboon/{id}', function(Request $request,$id) {
     ]);
     //dd($response);
     $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'.$id), true);
-    return view('show',compact('json'));
+    $boonid= $id;
+    return view('show',compact('json','boonid'));
 });
 /*
 |--------------------------------------------------------------------------
