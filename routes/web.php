@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,18 +24,6 @@ Route::get('/punboon/{id}', function ($id) {
     return view('form',compact('boonid'));
 });
 
-Route::post('saveboon', function(Request $request) {
-    $client = new \GuzzleHttp\Client();
-    $url = "https://jaipungo.herokuapp.com/punsave/boon1";
-   
-    $myBody['name'] = "Demo";
-    $response = $client->request('POST', 'https://jaipungo.herokuapp.com/punsave/boon1', [
-        'form_params' => [
-            'name' => 'george',
-        ]
-    ]);
-    dd($response);
-});
 
 Route::get('/boon/{id}', function ($id) {
     $json = json_decode(file_get_contents('https://jaipungo.herokuapp.com/puncall/boon'.$id), true);
