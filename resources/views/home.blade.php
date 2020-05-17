@@ -286,23 +286,6 @@ z-index:-1;
     margin-left: auto;
     margin-right: auto;
 ">ช่วยกันเติมเต็มโลกใบนี้ให้รอดปลอดภัยจากโควิด-19 ด้วยการแบ่งปันบุญ แบ่งปันความดีร่วมกัน</div>
-
-<div style="
-    text-align: center;
-    margin-top: 10px;
-    color: #2fdaca;
-    width: 346px;
-    font-size: 35px;
-    margin-left: auto;
-    margin-right: auto;
-"><?php echo $count[0]['count'] ?></div><div style="
-    text-align: center;
-    color: #666;
-    width: 346px;
-    line-height: 26px;
-    margin-left: auto;
-    margin-right: auto;
-">จำนวนการปันบุญ</div>
 <!-- start goal -->
 <div style="
     margin-top: 20px;
@@ -358,7 +341,7 @@ z-index:-1;
 
     .progress-bg h3.raised {
       color: #fff;
-      margin: 14px 25px 0 50px;
+      margin: 14px 25px 0 40px;
       padding: 0 25px 0 0;
     }
 
