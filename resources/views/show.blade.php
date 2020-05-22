@@ -215,7 +215,7 @@ $DateThai = array(
 					//$Return .= $i;
 					
           $split = explode("|". $i ."|", $DateCache); 
-          $StrCache= array([]);
+          $StrCache= '';
 					for($j=0; $j<count($split)-1; $j++)
 					{
 						$StrCache .= $split[$j];
