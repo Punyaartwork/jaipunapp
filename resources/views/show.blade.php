@@ -214,7 +214,8 @@ $DateThai = array(
 				{
 					//$Return .= $i;
 					
-					$split = explode("|". $i ."|", $DateCache); 
+          $split = explode("|". $i ."|", $DateCache); 
+          $StrCache= array([]);
 					for($j=0; $j<count($split)-1; $j++)
 					{
 						$StrCache .= $split[$j];
@@ -595,7 +596,40 @@ z-index:-1;
     margin-left: auto;
     margin-right: auto;
 ">
+@foreach($json as $json)<!--
+<div style="
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+">
 
+<img src="<?php if($json['sex'] === 'female'){ echo "https://sv1.picz.in.th/images/2019/08/16/Z9uFX8.png"; }else{ echo "https://sv1.picz.in.th/images/2019/08/16/Z9ujVv.png"; }   ?>" style="
+    width: 50px;
+    height:50px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    ">
+    <div style="
+        display: inline-block;
+        margin-left: 10px;
+    ">
+            
+        <div style="font-size: 14px;margin-bottom: 5px;"><?php echo $json['detail']; ?></div><div style="
+            font-size: 14px;
+            font-weight: bold;
+            color:#222;
+        "><?php echo $json['name']; ?><div style="
+            color: #777;
+            margin-top: 4px;
+            font-size: 12px;
+            display: inline;
+        ">   <?php echo generate_date_today("d M Y H:i", $json['time']); ?></div>
+        </div>
+    </div>
+
+</div>-->
+@endforeach
 </div>
 <!--?php echo $boonid; ?-->
     
