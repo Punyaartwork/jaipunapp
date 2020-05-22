@@ -595,7 +595,7 @@ z-index:-1;
     margin-left: auto;
     margin-right: auto;
 ">
-@foreach($json as $json)
+@foreach($json as $json)<!--
 <div style="
     padding: 15px;
     border-bottom: 1px solid #eee;
@@ -627,7 +627,7 @@ z-index:-1;
         </div>
     </div>
 
-</div>
+</div>-->
 @endforeach
 </div>
 <!--?php echo $boonid; ?-->

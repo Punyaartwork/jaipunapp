@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="/jaipunround.ico" type="image/x-icon">     
-<title>ตู้ปันบุญ - มาร่วมปันบุญ ช่วยโลกนี้ให้พ้นภัยโควิดด้วยกัน เป้าหมาย 10,000 การปัน</title>
+<title>ตู้ปันบุญ - มาร่วมปันบุญ ช่วยโลกนี้ให้พ้นภัยโควิดด้วยกัน เป้าหมาย 1,000 การปัน</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <style class="INLINE_PEN_STYLESHEET_ID">
     body {
@@ -433,7 +433,7 @@ z-index:-1;
     <div class="progress-bar">
     <h3 class="raised"><?php echo $count[0]['count'] ?>&nbsp;การปัน </h3>
     </div>
-    <h3 class="goal">เป้าหมาย: 10,000</h3>
+    <h3 class="goal">เป้าหมาย: 1,000</h3>
     </div>
 </div>
 <!-- end goal -->
